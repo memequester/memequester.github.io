@@ -172,7 +172,7 @@ function genClass(previousClass) {
             }
 
         else if (randomClass == "Rogue") {
-            finalClass = choice(["Soulknife","The Revived","Thief","Assassin","Arcane Trickster"]) + " Rogue"
+            finalClass = choice(["Soulknife","Revived","Thief","Assassin","Arcane Trickster"]) + " Rogue"
             }
 
         else if (randomClass == "Sorcerer") {
