@@ -56,6 +56,22 @@ body {
 	transform: translate(-50%, -50%);
 }
 
+.spanA {
+	color: #ccccff
+}
+
+.spanR {
+	color: #ffffcc
+}
+
+.spanC {
+	color: #ffcccc
+}
+
+.spanB {
+	color: #ccffcc
+}
+
 .info {
 	color: white;
 	

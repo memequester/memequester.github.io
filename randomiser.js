@@ -20,13 +20,11 @@ window.onload = function onLoad() {
 
 function randomise() {
     reset();
-    var generatedAlignment = genAlignment();
-    var generatedClass = genClass();
-    var generatedRace = genRace();
-    var generatedBackstory = genBackstory();
     
-    var randomisedCharacter = "A " + generatedAlignment + " " + generatedRace + " " + generatedClass + " " + generatedBackstory;
-    document.getElementById("content").innerHTML = randomisedCharacter;
+    document.getElementById("Alignment").innerHTML = genAlignment();
+	document.getElementById("Race").innerHTML = genRace();
+	document.getElementById("Class").innerHTML = genClass();
+	document.getElementById("Backstory").innerHTML = genBackstory();
 }
 
 //Generators
@@ -263,7 +261,7 @@ function genClass() {
 function genBackstory() {
     var randomBackstory = choice(backstoryList);
 
-    if (randomBackstory[0] in ["A", "E", "I", "O", "U"]) {
+    if (["A", "E", "I", "O", "U"].includes(randomBackstory.charAt(0))) {
         randomBackstory = "an " + randomBackstory;
 	}
     else {
