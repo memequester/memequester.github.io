@@ -2,7 +2,7 @@ var raceList = ['Aarakocra', 'Aasimar', 'Aetherborn', 'Aven', 'Bugbear', 'Centau
     
 var classList = ["Artificer", "Barbarian", "Bard", "Blood Hunter", "Cleric", "Druid", "Fighter", "Monk", "Paladin", "Ranger", "Rogue", "Sorcerer", "Warlock", "Wizard"];
 
-var backstoryList = ['Acolyte', 'Barbarian Tribe Member', 'Charlatan', 'City Watch', 'Clan Crafter', 'Cloistered Scholar', 'Courtier', 'Criminal', 'Entertainer', 'Faction Agent', 'Far Traveler', 'Fisher', 'Folk Hero', 'Guild Artisan', 'Haunted One', 'Hermit', 'Inheritor', 'Knight', 'Marine', 'Mercenary Veteran', 'Noble', 'Outlander', 'Port City Noble', 'Sage', 'Sailor', 'Shipwright', 'Smuggler', 'Soldier', 'Urban Bounty Hunter', 'Urchin']
+var backstoryList = ['Acolyte', 'Barbarian Tribe Member', 'Charlatan', 'City Watch', 'Clan Crafter', 'Cloistered Scholar', 'Courtier', 'Criminal', 'Entertainer', 'Faction Agent', 'Far Traveler', 'Fisher', 'Folk Hero', 'Guild Artisan', 'Haunted One', 'Hermit', 'Inheritor', 'Knight', 'Marine', 'Mercenary Veteran', 'Noble', 'Outlander', 'Port City Noble', 'Sage', 'Sailor', 'Shipwright', 'Smuggler', 'Soldier', 'Urban Bounty Hunter', 'Urchin'];
 
 var randomisedCharacter = '';
     
@@ -21,12 +21,11 @@ window.onload = function onLoad() {
 function randomise() {
     reset();
     var generatedAlignment = genAlignment();
-    var generatedFirstClass = genClass("");
-    var generatedSecondClass = genClass(generatedFirstClass);
+    var generatedClass = genClass();
     var generatedRace = genRace();
     var generatedBackstory = genBackstory();
     
-    var randomisedCharacter = "A " + generatedAlignment + " " + generatedRace + " " + generatedFirstClass + generatedSecondClass + " " + generatedBackstory;
+    var randomisedCharacter = "A " + generatedAlignment + " " + generatedRace + " " + generatedClass + " " + generatedBackstory;
     document.getElementById("content").innerHTML = randomisedCharacter;
 }
 
@@ -126,138 +125,139 @@ function genRace() {
     return charRace;
 }
 
-function genClass(previousClass) {
-    if (previousClass == "") {
-        var randomClass = choice(classList);
-        var finalClass = '';
-        
-        if (randomClass == "Artificer") {
-            finalClass = choice(["Alchemist","Artillerist","Battle Smith"]) + " Artificer"
-            }
+function genClass() {
+	var randomClass = choice(classList);
+	var finalClass = '';
 
-        else if (randomClass == "Barbarian") {
-            finalClass = "Path of the " + choice(["Beast","Berserker","Wild Soul","Totem Warrior"]) + " Barbarian"
-            }
+	if (randomClass == "Artificer") {
+		finalClass = choice(["Alchemist","Artillerist","Battle Smith"]) + " Artificer"
+		}
 
-        else if (randomClass == "Bard") {
-            finalClass = "Bard of the College of " + choice(["Creation","Eloquence","Lore","Valor","Glamour","Whispers"])
-            }
+	else if (randomClass == "Barbarian") {
+		finalClass = "Path of the " + choice(["Beast","Berserker","Wild Soul","Totem Warrior"]) + " Barbarian"
+		}
 
-        else if (randomClass == "Blood Hunter") {
-            finalClass = "Blood Hunter of the Order of the " + choice(["Ghostslayer","Lycan","Mutant","Profane Soul"])
-            }
+	else if (randomClass == "Bard") {
+		finalClass = "Bard of the College of " + choice(["Creation","Eloquence","Lore","Valor","Glamour","Whispers"])
+		}
 
-        else if (randomClass == "Cleric") {
-            finalClass = choice(["Knowledge","Life","Light","Tempest","Trickery","Nature"]) + " Domain Cleric"
-            }
+	else if (randomClass == "Blood Hunter") {
+		finalClass = "Blood Hunter of the Order of the " + choice(["Ghostslayer","Lycan","Mutant","Profane Soul"])
+		}
 
-        else if (randomClass == "Druid") {
-            finalClass = "Druid of the Circle of " + choice(["the Land","Wildfire","the Moon"])
-            }
+	else if (randomClass == "Cleric") {
+		finalClass = choice(["Knowledge","Life","Light","Tempest","Trickery","Nature"]) + " Domain Cleric"
+		}
 
-        else if (randomClass == "Fighter") {
-            finalClass = choice(['Arcane Archer', 'Banneret', 'Brute', 'Battle Master', 'Cavalier', 'Champion', 'Eldritch Knight', 'Monster Hunter', 'Samurai', 'Scout', 'Sharpshooter', 'Rune Knight', 'Psychic Warrior']) + " Fighter"
-            }
+	else if (randomClass == "Druid") {
+		finalClass = "Druid of the Circle of " + choice(["the Land","Wildfire","the Moon"])
+		}
 
-        else if (randomClass == "Monk") {
-            finalClass = "Monk practicing the Way of " + choice(["Mercy","the Astral Self","the Open Hand","the Four Elements","the Shadow"])
-            }
+	else if (randomClass == "Fighter") {
+		finalClass = choice(['Arcane Archer', 'Banneret', 'Brute', 'Battle Master', 'Cavalier', 'Champion', 'Eldritch Knight', 'Monster Hunter', 'Samurai', 'Scout', 'Sharpshooter', 'Rune Knight', 'Psychic Warrior']) + " Fighter"
+		}
 
-        else if (randomClass == "Paladin") {
-            finalClass = "Paladin bound by the Oath of " + choice(["Venegence","Devotion","Heroism","the Watchers","the Ancients"])
-            }
+	else if (randomClass == "Monk") {
+		finalClass = "Monk practicing the Way of " + choice(["Mercy","the Astral Self","the Open Hand","the Four Elements","the Shadow"])
+		}
 
-        else if (randomClass == "Ranger") {
-            finalClass = choice(["Hunter","Beast Master", "Swarmkeeper"]) + " Ranger"
-            }
+	else if (randomClass == "Paladin") {
+		finalClass = "Paladin bound by the Oath of " + choice(["Venegence","Devotion","Heroism","the Watchers","the Ancients"])
+		}
 
-        else if (randomClass == "Rogue") {
-            finalClass = choice(["Soulknife","Revived","Thief","Assassin","Arcane Trickster"]) + " Rogue"
-            }
+	else if (randomClass == "Ranger") {
+		finalClass = choice(["Hunter","Beast Master", "Swarmkeeper"]) + " Ranger"
+		}
 
-        else if (randomClass == "Sorcerer") {
-            finalClass = choice(["Draconic Bloodline","Wild","Aberrant Mind","Clockwork Soul"]) + " Sorcerer"
-            }
+	else if (randomClass == "Rogue") {
+		finalClass = choice(["Soulknife","Revived","Thief","Assassin","Arcane Trickster"]) + " Rogue"
+		}
 
-        else if (randomClass == "Warlock") {
-            finalClass = "Warlock empowered by the " + choice(["Archfey","Great Old One","Fiend","Lurker in the Deep","Noble Genie"])
-            }
+	else if (randomClass == "Sorcerer") {
+		finalClass = choice(["Draconic Bloodline","Wild","Aberrant Mind","Clockwork Soul"]) + " Sorcerer"
+		}
 
-        else if (randomClass == "Wizard") {
-            finalClass = "Wizard of the School of " + choice(["Psionics","Onomancy","Evocation","Abjuration","Divination","Conjuration","Enchantment","Illusion","Necromancy","Transmutation"])
-            }
-        
-        return finalClass;
-        
-       }
-    else {
-        if (choice(["dual", "single", "single", "single"]) == "dual") {
-            randomClass = choice(classList);
-            finalClass = '';
+	else if (randomClass == "Warlock") {
+		finalClass = "Warlock empowered by the " + choice(["Archfey","Great Old One","Fiend","Lurker in the Deep","Noble Genie"])
+		}
 
-            if (randomClass == "Artificer") {
-                finalClass = choice(["Alchemist","Artillerist","Battle Smith"]) + " Artificer"
-                }
+	else if (randomClass == "Wizard") {
+		finalClass = "Wizard of the School of " + choice(["Psionics","Onomancy","Evocation","Abjuration","Divination","Conjuration","Enchantment","Illusion","Necromancy","Transmutation"])
+		}
 
-            else if (randomClass == "Barbarian") {
-                finalClass = "Path of the " + choice(["Beast","Berserker","Wild Soul","Totem Warrior"]) + " Barbarian"
-                }
+	if (choice(["dual", "single", "single", "single"]) == "single") {
+		return finalClass;
+	}
+	
+	else {
+			// https://medium.com/javascript-in-plain-english/how-to-remove-a-specific-item-from-an-array-in-javascript-a49b108404c
+			// literally one of the most basic operations. why is this a two line ordeal? python has had this for years.
+		var index = classList.indexOf(randomClass);
+		if (index > -1) { 
+			classList.splice(index, 1) 
+		}
 
-            else if (randomClass == "Bard") {
-                finalClass = "Bard of the College of " + choice(["Creation","Eloquence","Lore","Valor","Glamour","Whispers"])
-                }
+		randomClass = choice(classList);
+		var secondClass = ''
 
-            else if (randomClass == "Blood Hunter") {
-                finalClass = "Blood Hunter of the Order of the " + choice(["Ghostslayer","Lycan","Mutant","Profane Soul"])
-                }
+		if (randomClass == "Artificer") {
+			secondClass = choice(["Alchemist","Artillerist","Battle Smith"]) + " Artificer"
+			}
 
-            else if (randomClass == "Cleric") {
-                finalClass = choice(["Knowledge","Life","Light","Tempest","Trickery","Nature"]) + " Domain Cleric"
-                }
+		else if (randomClass == "Barbarian") {
+			secondClass = "Path of the " + choice(["Beast","Berserker","Wild Soul","Totem Warrior"]) + " Barbarian"
+			}
 
-            else if (randomClass == "Druid") {
-                finalClass = "Druid of the Circle of " + choice(["the Land","Wildfire","the Moon"])
-                }
+		else if (randomClass == "Bard") {
+			secondClass = "Bard of the College of " + choice(["Creation","Eloquence","Lore","Valor","Glamour","Whispers"])
+			}
 
-            else if (randomClass == "Fighter") {
-                finalClass = choice(['Arcane Archer', 'Banneret', 'Brute', 'Battle Master', 'Cavalier', 'Champion', 'Eldritch Knight', 'Monster Hunter', 'Samurai', 'Scout', 'Sharpshooter', 'Rune Knight', 'Psychic Warrior']) + " Fighter"
-                }
+		else if (randomClass == "Blood Hunter") {
+			secondClass = "Blood Hunter of the Order of the " + choice(["Ghostslayer","Lycan","Mutant","Profane Soul"])
+			}
 
-            else if (randomClass == "Monk") {
-                finalClass = "Monk practicing the Way of " + choice(["Mercy","the Astral Self","the Open Hand","the Four Elements","the Shadow"])
-                }
+		else if (randomClass == "Cleric") {
+			secondClass = choice(["Knowledge","Life","Light","Tempest","Trickery","Nature"]) + " Domain Cleric"
+			}
 
-            else if (randomClass == "Paladin") {
-                finalClass = "Paladin bound by the Oath of " + choice(["Venegence","Devotion","Heroism","the Watchers","the Ancients"])
-                }
+		else if (randomClass == "Druid") {
+			secondClass = "Druid of the Circle of " + choice(["the Land","Wildfire","the Moon"])
+			}
 
-            else if (randomClass == "Ranger") {
-                finalClass = choice(["Hunter","Beast Master", "Swarmkeeper"]) + " Ranger"
-                }
+		else if (randomClass == "Fighter") {
+			secondClass = choice(['Arcane Archer', 'Banneret', 'Brute', 'Battle Master', 'Cavalier', 'Champion', 'Eldritch Knight', 'Monster Hunter', 'Samurai', 'Scout', 'Sharpshooter', 'Rune Knight', 'Psychic Warrior']) + " Fighter"
+			}
 
-            else if (randomClass == "Rogue") {
-                finalClass = choice(["Soulknife","The Revived","Thief","Assassin","Arcane Trickster"]) + " Rogue"
-                }
+		else if (randomClass == "Monk") {
+			secondClass = "Monk practicing the Way of " + choice(["Mercy","the Astral Self","the Open Hand","the Four Elements","the Shadow"])
+			}
 
-            else if (randomClass == "Sorcerer") {
-                finalClass = choice(["Draconic Bloodline","Wild","Aberrant Mind","Clockwork Soul"]) + " Sorcerer"
-                }
+		else if (randomClass == "Paladin") {
+			secondClass = "Paladin bound by the Oath of " + choice(["Venegence","Devotion","Heroism","the Watchers","the Ancients"])
+			}
 
-            else if (randomClass == "Warlock") {
-                finalClass = "Warlock empowered by the " + choice(["Archfey","Great Old One","Fiend","Lurker in the Deep","Noble Genie"])
-                }
+		else if (randomClass == "Ranger") {
+			secondClass = choice(["Hunter","Beast Master", "Swarmkeeper"]) + " Ranger"
+			}
 
-            else if (randomClass == "Wizard") {
-                finalClass = "Wizard of the School of " + choice(["Psionics","Onomancy","Evocation","Abjuration","Divination","Conjuration","Enchantment","Illusion","Necromancy","Transmutation"])
-                }
+		else if (randomClass == "Rogue") {
+			secondClass = choice(["Soulknife","The Revived","Thief","Assassin","Arcane Trickster"]) + " Rogue"
+			}
 
-            return " / " + finalClass;
-        }
-        
-        else {
-            return "";
-        }
-    }
+		else if (randomClass == "Sorcerer") {
+			secondClass = choice(["Draconic Bloodline","Wild","Aberrant Mind","Clockwork Soul"]) + " Sorcerer"
+			}
+
+		else if (randomClass == "Warlock") {
+			secondClass = "Warlock empowered by the " + choice(["Archfey","Great Old One","Fiend","Lurker in the Deep","Noble Genie"])
+			}
+
+		else if (randomClass == "Wizard") {
+			secondClass = "Wizard of the School of " + choice(["Psionics","Onomancy","Evocation","Abjuration","Divination","Conjuration","Enchantment","Illusion","Necromancy","Transmutation"])
+			}
+
+		return finalClass + " / " + secondClass;
+	}
 }
 
 function genBackstory() {
@@ -273,8 +273,9 @@ function genBackstory() {
     return "with a past as " + randomBackstory;
 }
 
-//why isn't this built in?
+//why aren't these built in?
 
+//https://stackoverflow.com/a/9071606/11412009
 function choice(choices) {
   var index = Math.floor(Math.random() * choices.length);
   return choices[index];
