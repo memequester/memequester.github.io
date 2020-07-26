@@ -44,9 +44,10 @@ function genRace() {
     var randomRace = choice(raceList);
 	var charRace = '';
 
-    if (randomRace in ["Elf", "Half-Elf"]) { 
+    if (randomRace == "Elf" || randomRace == "Half-Elf") { 
         charRace = choice(['High Elf', 'Wood Elf', 'Drow', 'Sea Elf', 'Eladrin', 'Shadar-kai']);
-        if (randomRace == "Half-Elf") { 
+        
+		if (randomRace == "Half-Elf") { 
             charRace = "Half-" + charRace;
 		}
 	}
