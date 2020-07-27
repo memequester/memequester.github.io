@@ -7,10 +7,10 @@ var raceList = ['Aarakocra', 'Aasimar', 'Aetherborn', 'Bugbear', 'Centaur', 'Cha
 var classList = ["Artificer", "Barbarian", "Bard", "Blood Hunter", "Cleric", "Druid", "Fighter", "Monk", "Paladin", "Ranger", "Rune Scribe", "Rogue", "Sorcerer", "Warlock", "Wizard"];
 
 // this list is more detailed, but many of these backgrounds are just variants of another. these variants don't have their own pages, so e.g. dnd.wikidot.com/background:knight is empty
-//var backstoryList = ['Acolyte', 'Anthropologist', 'Archaeologist', 'Charlatan', 'City Watch', 'Clan Crafter', 'Cloistered Scholar', 'Courtier', 'Criminal', 'Entertainer', 'Faceless', 'Faction Agent', 'Far Traveler', 'Folk Hero', 'Gladiator', 'Guild Artisan', 'Guild Merchant', 'Haunted One', 'House Agent', 'Hermit', 'Inheritor', 'Investigator', 'Knight', 'Knight of the Order', 'Mercenary Veteran', 'Noble', 'Outlander', 'Pirate', 'Sage', 'Sailor', 'Soldier', 'Spy', 'Urban Bounty Hunter', 'Urchin', 'Uthgardt Tribe Member', 'Waterdhavian Noble'];
+//var backgroundList = ['Acolyte', 'Anthropologist', 'Archaeologist', 'Charlatan', 'City Watch', 'Clan Crafter', 'Cloistered Scholar', 'Courtier', 'Criminal', 'Entertainer', 'Faceless', 'Faction Agent', 'Far Traveler', 'Folk Hero', 'Gladiator', 'Guild Artisan', 'Guild Merchant', 'Haunted One', 'House Agent', 'Hermit', 'Inheritor', 'Investigator', 'Knight', 'Knight of the Order', 'Mercenary Veteran', 'Noble', 'Outlander', 'Pirate', 'Sage', 'Sailor', 'Soldier', 'Spy', 'Urban Bounty Hunter', 'Urchin', 'Uthgardt Tribe Member', 'Waterdhavian Noble'];
 
 // hence, use a simpler list of backgrounds. all of these backgrounds have dnd.wikidot.com pages.
-var fixedBackgroundList = ['acolyte', 'sailor', 'archaeologist', 'criminal', 'charlatan', 'faceless', 'urchin', 'hermit', 'entertainer', 'soldier', 'inheritor', 'outlander', 'noble', 'anthropologist', 'sage', 'courtier', 'waterdhavian-noble', 'cloistered-scholar', 'house-agent', 'faction-agent', 'far-traveler', 'mercenary-veteran', 'guild-artisan', 'folk-hero', 'haunted-one', 'clan-crafter', 'uthgardt-tribe-member', 'urban-bounty-hunter', 'knight-of-the-order']
+var fixedBackgroundList = ['Acolyte', 'Sailor', 'Archaeologist', 'Criminal', 'Charlatan', 'Faceless', 'Urchin', 'Hermit', 'Entertainer', 'Soldier', 'Inheritor', 'Outlander', 'Noble', 'Anthropologist', 'Sage', 'Courtier', 'Waterdhavian Noble', 'Cloistered Scholar', 'House Agent', 'Faction Agent', 'Far Traveler', 'Mercenary Veteran', 'Guild Artisan', 'Folk Hero', 'Haunted One', 'Clan Crafter', 'Uthgardt Tribe Member', 'Urban Bounty Hunter', 'Knight Of The Order']
 
 var baseRace = '';
 
@@ -28,9 +28,9 @@ var generatedSecondClass = '';
 
 var baseSecondClass = '';
 
-var randomBackstory = '';
+var randomBackground = '';
 
-var generatedBackstory = '';
+var generatedBackground = '';
 
 //
     
@@ -52,19 +52,19 @@ function randomise() {
 	generatedAlignment = genAlignment();
 	[generatedRace, baseRace] = genRace();
 	[generatedFirstClass, firstBaseClass, firstSubClass, generatedSecondClass, secondBaseClass, secondSubClass] = genClass();
-	generatedBackstory = genBackstory()
+	generatedBackground = genBackground()
 	
     document.getElementById("Alignment").innerHTML = generatedAlignment;
 	document.getElementById("hRace").innerHTML = generatedRace;
 	document.getElementById("hFirstClass").innerHTML = generatedFirstClass;
 	document.getElementById("hSecondClass").innerHTML = generatedSecondClass;
-	document.getElementById("hBackstory").innerHTML = generatedBackstory;
+	document.getElementById("hBackground").innerHTML = generatedBackground;
 	
 	// don't need a hyperlink for alignment
 	document.getElementById("hRace").href = "http://dnd5e.wikidot.com/" + getSubpage('race');
 	document.getElementById("hFirstClass").href = "http://dnd5e.wikidot.com/" + getSubpage('firstClass');
 	document.getElementById("hSecondClass").href = "http://dnd5e.wikidot.com/" + getSubpage('secondClass');
-	document.getElementById("hBackstory").href = "http://dnd5e.wikidot.com/" + getSubpage('backstory');
+	document.getElementById("hBackground").href = "http://dnd5e.wikidot.com/" + getSubpage('background');
 }
 
 
@@ -116,17 +116,17 @@ function getSubpage(source) {
 		return baseRace;
 	} 
 	
-	else if (source == 'backstory') {
-		if (randomBackstory == "Knight") {
-			randomBackstory = "Noble";
+	else if (source == 'background') {
+		if (randomBackground == "Knight") {
+			randomBackground = "Noble";
 		}
-		else if (randomBackstory == "Spy") {
-			randomBackstory = "Criminal";
+		else if (randomBackground == "Spy") {
+			randomBackground = "Criminal";
 		}
 		
 		
-		//openInNewTab("background:" + randomBackstory.toLowerCase().replace(" ","-"))
-		return "background:" + randomBackstory.toLowerCase().replace(" ","-");
+		//openInNewTab("background:" + randomBackground.toLowerCase().replace(" ","-"))
+		return "background:" + randomBackground.toLowerCase().replace(" ","-");
 	}
 }
 
@@ -429,17 +429,17 @@ function genClass() {
 	}
 }
 
-function genBackstory() {
-    randomBackstory = choice(backstoryList);
+function genBackground() {
+    randomBackground = choice(fixedBackgroundList);
 
-    if (["A", "E", "I", "O", "U"].includes(randomBackstory.charAt(0))) {
-        fixedBackstory = "an " + randomBackstory;
+    if (["A", "E", "I", "O", "U"].includes(randomBackground.charAt(0))) {
+        fixedBackground = "an " + randomBackground;
 	}
     else {
-        fixedBackstory = "a " + randomBackstory;
+        fixedBackground = "a " + randomBackground;
 	}
 
-    return "with a past as " + fixedBackstory;
+    return "with a past as " + fixedBackground;
 }
 
 //why aren't these built in?
