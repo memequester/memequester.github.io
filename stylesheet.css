@@ -40,7 +40,20 @@ body {
   background-color: #a71414;
 }
 
-.prompt {
+.intro {
+	color: white;
+	
+	font-family: sans-serif;
+	font-size: 13px;
+	text-align: left;
+	border: none;
+	outline-style: none;
+	
+	position: fixed;
+	top: 1%;
+	left: 1%;
+}
+.generated {
 	color: white;
 	
 	font-family: sans-serif;
@@ -57,19 +70,25 @@ body {
 }
 
 .spanA {
-	color: #ccccff
+	color: #ccccff;
 }
 
 .spanR {
-	color: #ffffcc
+	color: #ffffcc;
+	text-decoration: underline;
+	text-decoration-color: #ffffcc;
 }
 
 .spanC {
-	color: #ffcccc
+	color: #ffcccc;
+	text-decoration: underline;
+	text-decoration-color: #ffcccc;
 }
 
 .spanB {
-	color: #ccffcc
+	color: #ccffcc;
+	text-decoration: underline;
+	text-decoration-color: #ccffcc;
 }
 
 .info {

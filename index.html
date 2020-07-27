@@ -8,10 +8,28 @@
     </head>
 
     <body>
-        <button class="button" onclick="randomise()">Generate Character</button>
+		<p class="intro">This is a D&#38;D character idea generator. Every race, class and background accessible on <a href="http://dnd5e.wikidot.com">dnd5e.wikidot.com</a> has a chance to be generated. Clicking on one of these aspects will open that aspect's page in a new tab.</p>
+        
+		<button class="button" onclick="randomise()">Generate Character</button>
         
         <div>
-			<p class="prompt">A <span id="Alignment" class="spanA"></span> <span id="Race" class="spanR"></span> <span id="Class" class="spanC"></span> <span id="Backstory" class="spanB"></span>.</p>
+			<p class="generated">
+				<span id="Alignment" 	class="spanA"></span>
+				<!---
+					<span id="Race" 		class="spanR" onclick=getSubpage('race')>		</span>
+					<span id="FirstClass" 	class="spanC" onclick=getSubpage('firstClass')>	</span>
+					<span id="SecondClass" 	class="spanC" onclick=getSubpage('secondClass')></span>
+					<span id="Backstory" 	class="spanB" onclick=getSubpage('backstory')>	</span>
+					<br><br><br> 
+
+					<a id="hAlignment" class="spanA" href='#'>test</a> 
+				--->
+				<a id="hRace" 	 		class="spanR"	href='#' 	target="_blank">test</a>
+				<a id="hFirstClass" 	class="spanC"	href='#'	target="_blank">test</a>
+				<a id="hSecondClass"	class="spanC"	href='#'	target="_blank">test</a>
+				<a id="hBackstory" 		class="spanB"	href='#'	target="_blank">test</a>
+				
+			</p>
 		</div>
 		
 		<p class="info">WIP.</p>

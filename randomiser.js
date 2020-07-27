@@ -1,17 +1,45 @@
-var raceList = ['Aarakocra', 'Aasimar', 'Aetherborn', 'Aven', 'Bugbear', 'Centaur', 'Changeling', 'Dragonborn', 'Dwarf', 'Elf', 'Firbolg', 'Genasi', 'Gith', 'Gnome', 'Goblin', 'Goliath', 'Grung', 'Half-Elf', 'Half-Orc', 'Halfling', 'Hobgoblin', 'Human', 'Kalashtar', 'Kenku', 'Kobold', 'Lizardfolk', 'Loxodon', 'Minotaur', 'Orc', 'Shifter', 'Simic Hybrid', 'Tabaxi', 'Tiefling', 'Tortle', 'Triton', 'Vampire', 'Warforged', 'Yuan-Ti Pureblood'];
+// I don't know javascript. A lot of this code is "adapted" from Sebastian Lague's game idea generator @ seblague.github.io/ideagenerator/
+// any other borrowed code is referenced.
+// god bless stackoverflow
+
+var raceList = ['Aarakocra', 'Aasimar', 'Aetherborn', 'Bugbear', 'Centaur', 'Changeling', 'Dragonborn', 'Dwarf', 'Elf', 'Firbolg', 'Genasi', 'Gith', 'Gnome', 'Goblin', 'Goliath', 'Grung', 'Half-Elf', 'Half-Orc', 'Halfling', 'Hobgoblin', 'Human', 'Kalashtar', 'Kenku', 'Kobold', 'Lizardfolk', 'Loxodon', 'Minotaur', 'Orc', 'Shifter', 'Simic Hybrid', 'Tabaxi', 'Tiefling', 'Tortle', 'Triton', 'Vampire', 'Warforged', 'Yuan-Ti Pureblood'];
     
-var classList = ["Artificer", "Barbarian", "Bard", "Blood Hunter", "Cleric", "Druid", "Fighter", "Monk", "Paladin", "Ranger", "Rogue", "Sorcerer", "Warlock", "Wizard"];
+var classList = ["Artificer", "Barbarian", "Bard", "Blood Hunter", "Cleric", "Druid", "Fighter", "Monk", "Paladin", "Ranger", "Rune Scribe", "Rogue", "Sorcerer", "Warlock", "Wizard"];
 
-var backstoryList = ['Acolyte', 'Barbarian Tribe Member', 'Charlatan', 'City Watch', 'Clan Crafter', 'Cloistered Scholar', 'Courtier', 'Criminal', 'Entertainer', 'Faction Agent', 'Far Traveler', 'Fisher', 'Folk Hero', 'Guild Artisan', 'Haunted One', 'Hermit', 'Inheritor', 'Knight', 'Marine', 'Mercenary Veteran', 'Noble', 'Outlander', 'Port City Noble', 'Sage', 'Sailor', 'Shipwright', 'Smuggler', 'Soldier', 'Urban Bounty Hunter', 'Urchin'];
+// this list is more detailed, but many of these backgrounds are just variants of another. these variants don't have their own pages, so e.g. dnd.wikidot.com/background:knight is empty
+//var backstoryList = ['Acolyte', 'Anthropologist', 'Archaeologist', 'Charlatan', 'City Watch', 'Clan Crafter', 'Cloistered Scholar', 'Courtier', 'Criminal', 'Entertainer', 'Faceless', 'Faction Agent', 'Far Traveler', 'Folk Hero', 'Gladiator', 'Guild Artisan', 'Guild Merchant', 'Haunted One', 'House Agent', 'Hermit', 'Inheritor', 'Investigator', 'Knight', 'Knight of the Order', 'Mercenary Veteran', 'Noble', 'Outlander', 'Pirate', 'Sage', 'Sailor', 'Soldier', 'Spy', 'Urban Bounty Hunter', 'Urchin', 'Uthgardt Tribe Member', 'Waterdhavian Noble'];
 
-var randomisedCharacter = '';
+// hence, use a simpler list of backgrounds. all of these backgrounds have dnd.wikidot.com pages.
+var fixedBackgroundList = ['acolyte', 'sailor', 'archaeologist', 'criminal', 'charlatan', 'faceless', 'urchin', 'hermit', 'entertainer', 'soldier', 'inheritor', 'outlander', 'noble', 'anthropologist', 'sage', 'courtier', 'waterdhavian-noble', 'cloistered-scholar', 'house-agent', 'faction-agent', 'far-traveler', 'mercenary-veteran', 'guild-artisan', 'folk-hero', 'haunted-one', 'clan-crafter', 'uthgardt-tribe-member', 'urban-bounty-hunter', 'knight-of-the-order']
+
+var baseRace = '';
+
+var baseClass = '';
+
+var generatedRace = '';
+
+var baseRace = '';
+
+var generatedFirstClass = '';
+
+var baseFirstClass = '';
+
+var generatedSecondClass = '';
+
+var baseSecondClass = '';
+
+var randomBackstory = '';
+
+var generatedBackstory = '';
+
+//
     
 function reset() {
-    raceList = ['Aarakocra', 'Aasimar', 'Aetherborn', 'Aven', 'Bugbear', 'Centaur', 'Changeling', 'Dragonborn', 'Dwarf', 'Elf', 'Firbolg', 'Genasi', 'Gith', 'Gnome', 'Goblin', 'Goliath', 'Grung', 'Half-Elf', 'Half-Orc', 'Halfling', 'Hobgoblin', 'Human', 'Kalashtar', 'Kenku', 'Kobold', 'Lizardfolk', 'Loxodon', 'Minotaur', 'Orc', 'Shifter', 'Simic Hybrid', 'Tabaxi', 'Tiefling', 'Tortle', 'Triton', 'Vampire', 'Warforged', 'Yuan-Ti Pureblood'];
+    raceList = ['Aarakocra', 'Aasimar', 'Aetherborn', 'Aven', 'Bugbear', 'Centaur', 'Changeling', 'Dragonborn', 'Dwarf', 'Elf', 'Firbolg', 'Genasi', 'Gith', 'Gnome', 'Goblin', 'Goliath', 'Grung', 'Half-Elf', 'Half-Orc', 'Halfling', 'Hobgoblin', 'Human', 'Kalashtar', 'Kenku', 'Kobold', 'Lizardfolk', 'Loxodon', 'Minotaur', 'Orc', 'Shifter', 'Simic Hybrid', 'Tabaxi', 'Tiefling', 'Tortle', 'Triton', 'Warforged', 'Yuan-Ti'];
     
     classList = ["Artificer", "Barbarian", "Bard", "Blood Hunter", "Cleric", "Druid", "Fighter", "Monk", "Paladin", "Ranger", "Rogue", "Sorcerer", "Warlock", "Wizard"];
     
-    randomisedCharacter = '';
+	baseRace = '';
 }
 
 window.onload = function onLoad() {
@@ -21,10 +49,85 @@ window.onload = function onLoad() {
 function randomise() {
     reset();
     
-    document.getElementById("Alignment").innerHTML = genAlignment();
-	document.getElementById("Race").innerHTML = genRace();
-	document.getElementById("Class").innerHTML = genClass();
-	document.getElementById("Backstory").innerHTML = genBackstory();
+	generatedAlignment = genAlignment();
+	[generatedRace, baseRace] = genRace();
+	[generatedFirstClass, firstBaseClass, firstSubClass, generatedSecondClass, secondBaseClass, secondSubClass] = genClass();
+	generatedBackstory = genBackstory()
+	
+    document.getElementById("Alignment").innerHTML = generatedAlignment;
+	document.getElementById("hRace").innerHTML = generatedRace;
+	document.getElementById("hFirstClass").innerHTML = generatedFirstClass;
+	document.getElementById("hSecondClass").innerHTML = generatedSecondClass;
+	document.getElementById("hBackstory").innerHTML = generatedBackstory;
+	
+	// don't need a hyperlink for alignment
+	document.getElementById("hRace").href = "http://dnd5e.wikidot.com/" + getSubpage('race');
+	document.getElementById("hFirstClass").href = "http://dnd5e.wikidot.com/" + getSubpage('firstClass');
+	document.getElementById("hSecondClass").href = "http://dnd5e.wikidot.com/" + getSubpage('secondClass');
+	document.getElementById("hBackstory").href = "http://dnd5e.wikidot.com/" + getSubpage('backstory');
+}
+
+
+function openInNewTab(subpage) {
+	// adapted from https://stackoverflow.com/a/57536096/11412009
+	const win = window.open('http://dnd5e.wikidot.com/' + subpage, '_blank');
+	
+	/* pointless and convoluted checks to see if the page is empty or not. 
+	fetch("https://example.com/pluginchangelog.txt", {credentials: "omit"}).then(resp => resp.text()).then(text => {
+  	if (text.search("(yet) exist") > -1) {
+		const win = window.open('http://dnd5e.wikidot.com/' + subpage, '_blank');
+		}
+		
+	else {
+		
+	}
+	})
+	*/
+		
+
+}
+
+function getSubpage(source) {
+	if (source == 'firstClass') {
+		
+		firstBaseClass = firstBaseClass.toLowerCase().replace(" ","-");
+		firstSubClass = firstSubClass.toLowerCase().replace(" ","-");
+
+		//openInNewTab(firstBaseClass + ":" + firstSubClass);
+		return firstBaseClass + ":" + firstSubClass;
+	}
+	
+	else if (source == 'secondClass') {
+		secondBaseClass = secondBaseClass.toLowerCase().replace(" ","-");
+		secondSubClass = secondSubClass.toLowerCase().replace(" ","-");
+
+		//openInNewTab(secondBaseClass + ":" + secondSubClass);
+		return secondBaseClass + ":" + secondSubClass;
+			
+	}
+	
+	else if (source == 'race') {
+		if (baseRace == "Warforged") {
+			baseRace = "Warforged-ua";
+		}
+		baseRace = baseRace.toLowerCase().replace(" ","-");
+		
+		//openInNewTab(baseRace);
+		return baseRace;
+	} 
+	
+	else if (source == 'backstory') {
+		if (randomBackstory == "Knight") {
+			randomBackstory = "Noble";
+		}
+		else if (randomBackstory == "Spy") {
+			randomBackstory = "Criminal";
+		}
+		
+		
+		//openInNewTab("background:" + randomBackstory.toLowerCase().replace(" ","-"))
+		return "background:" + randomBackstory.toLowerCase().replace(" ","-");
+	}
 }
 
 //Generators
@@ -114,6 +217,10 @@ function genRace() {
     else if (randomRace == "Warforged") {
         charRace = choice(["", "", "", "Envoy", "Juggernaut", "Skirmisher"]) + " Warforged";
 	}
+	
+	else if (randomRace == "Yuan-Ti") {
+		charRace = "Yuan-Ti Pureblood";
+	}
 
     else {
         charRace = randomRace;
@@ -121,72 +228,106 @@ function genRace() {
 
     charRace = choice(["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "Revenant "]) + charRace;
 
-    return charRace;
+    return [charRace, randomRace];
 }
 
 function genClass() {
 	var randomClass = choice(classList);
+	var subClassChoice = '';
 	var finalClass = '';
-
+	
+	// in order to get results from dnd5e.wikidot.com, I need the base class (e.g. Druid) and a shorted version of the subclass (e.g. Twilight instead of Circle of Twilight)
+	// to get this, store the initial random choice from the base classList and store the random choice from each class' list of subclasses
+	
 	if (randomClass == "Artificer") {
-		finalClass = choice(["Alchemist","Artillerist","Battle Smith"]) + " Artificer"
+		subClassChoice = choice(["Alchemist","Armorer","Artillerist","Battle Smith"]);
+		finalClass = subClassChoice + " Artificer";
 		}
 
 	else if (randomClass == "Barbarian") {
-		finalClass = "Path of the " + choice(["Beast","Berserker","Wild Soul","Totem Warrior"]) + " Barbarian"
+		subClassChoice = choice(["Ancestral Guardian","Battle Rager","Beast","Berserker","Juggernaut","Storm Herald","Wild Soul","Totem Warrior","Zealot"]);
+		finalClass = "Path of the " + subClassChoice + " Barbarian";
 		}
 
 	else if (randomClass == "Bard") {
-		finalClass = "Bard of the College of " + choice(["Creation","Eloquence","Lore","Valor","Glamour","Whispers"])
+		subClassChoice = choice(["Creation","Eloquence","Glamour","Lore","Satire","Swords","Valor","Whispers"]);
+		finalClass = "Bard of the College of " + subClassChoice;
 		}
 
 	else if (randomClass == "Blood Hunter") {
-		finalClass = "Blood Hunter of the Order of the " + choice(["Ghostslayer","Lycan","Mutant","Profane Soul"])
+		subClassChoice = choice(["Ghostslayer","Lycan","Mutant","Profane Soul"]);
+		finalClass = "Blood Hunter of the Order of the " + subClassChoice;
 		}
 
 	else if (randomClass == "Cleric") {
-		finalClass = choice(["Knowledge","Life","Light","Tempest","Trickery","Nature"]) + " Domain Cleric"
+		subClassChoice = choice(["Ambition","Arcana","Blood","Death","Forge","Grave","Knowledge","Life","Light","Nature","Order","Protection","Solidarity","Strength","Tempest","Trickery","Twilight","Unity","War","Zeal"]);
+		finalClass = subClassChoice + " Domain Cleric";
 		}
 
 	else if (randomClass == "Druid") {
-		finalClass = "Druid of the Circle of " + choice(["the Land","Wildfire","the Moon"])
+		subClassChoice = choice(["Dreams","the Land","the Moon","the Shepherd","Spores","Stars","Twilight","Wildfire"]);
+		finalClass = "Druid of the Circle of " + subClassChoice;
+		// adapted from https://stackoverflow.com/a/9323226/11412009
+		// this shortens the subClassChoice to the last word (e.g. "the Shepherd" to just "Shepherd") to work with dnd5e.wikidot.com's url system
+		var lastWordIndex = finalClass.lastIndexOf(" ");
+		subClassChoice = subClassChoice.substring(0, lastWordIndex);
 		}
 
 	else if (randomClass == "Fighter") {
-		finalClass = choice(['Arcane Archer', 'Banneret', 'Brute', 'Battle Master', 'Cavalier', 'Champion', 'Eldritch Knight', 'Monster Hunter', 'Samurai', 'Scout', 'Sharpshooter', 'Rune Knight', 'Psychic Warrior']) + " Fighter"
+		subClassChoice = choice(["Arcane Archer","Banneret","Brute","Battle Master","Cavalier","Champion","Echo Knight","Eldritch Knight","Monster Hunter","Psi Knight","Psychic Warrior","Rune Knight","Samurai","Scout", "Sharpshooter"]);
+		finalClass = subClassChoice + " Fighter";
 		}
 
 	else if (randomClass == "Monk") {
-		finalClass = "Monk practicing the Way of " + choice(["Mercy","the Astral Self","the Open Hand","the Four Elements","the Shadow"])
+		subClassChoice = choice(["Mercy","the Astral Self","the Cobalt Soul","Drunken Master","the Four Elements","the Kensei","the Long Death","the Open Hand","the Shadow","the Soul Knife","Tranquility"]);
+		finalClass = "Monk practicing the Way of " + subClassChoice;
 		}
 
 	else if (randomClass == "Paladin") {
-		finalClass = "Paladin bound by the Oath of " + choice(["Venegence","Devotion","Heroism","the Watchers","the Ancients"])
+		subClassChoice = choice(["the Ancients","Conquest","the Crown","Devotion","Heroism","Redemption","Treachery","Venegence","the Watchers", "Oathbreaker"]);
+		if (subClassChoice == "Oathbreaker") {
+			finalClass = "Oathbreaker Paladin";
+		}
+		else {
+			finalClass = "Paladin bound by the Oath of " + subClassChoice;
+		}
 		}
 
 	else if (randomClass == "Ranger") {
-		finalClass = choice(["Hunter","Beast Master", "Swarmkeeper"]) + " Ranger"
+		subClassChoice = choice(["Beast Master","Fey Wanderer","Gloom Stalker","Horizon Walker","Hunter","Monster Slayer","Primeval Guardian","Swarmkeeper"]);
+		finalClass = subClassChoice + " Ranger";
 		}
+	
+	else if (randomClass == "Rune Scribe") {
+		subClassChoice = "Rune Scribe";
+		finalClass = "Rune Scribe";
+	}
 
 	else if (randomClass == "Rogue") {
-		finalClass = choice(["Soulknife","Revived","Thief","Assassin","Arcane Trickster"]) + " Rogue"
+		subClassChoice = choice(["Arcane Trickster","Assassin","Inquisitive","Mastermind","Revived","Scout","Soulknife","Swashbuckler","Thief"]);
+		finalClass = subClassChoice + " Rogue";
 		}
 
 	else if (randomClass == "Sorcerer") {
-		finalClass = choice(["Draconic Bloodline","Wild","Aberrant Mind","Clockwork Soul"]) + " Sorcerer"
+		subClassChoice = choice(["Aberrant Mind","Clockwork Soul","Draconic Bloodline","Divine Soul","Giant Soul","Phoenix","Psionic Soul","Pyromancy","Runechild","Sea","Shadow Magic","Stone","Storm","Wild"]);
+		finalClass = subClassChoice + " Sorcerer";
 		}
 
 	else if (randomClass == "Warlock") {
-		finalClass = "Warlock empowered by the " + choice(["Archfey","Great Old One","Fiend","Lurker in the Deep","Noble Genie"])
+		subClassChoice = choice(["Archfey","Celestial","Fiend","Great Old One","Hexblade","Kraken","Lurker in the Deep","Noble Genie","Raven Queen","Seeker","Undying"]);
+		finalClass = "Warlock empowered by the " + subClassChoice;
 		}
 
 	else if (randomClass == "Wizard") {
-		finalClass = "Wizard of the School of " + choice(["Psionics","Onomancy","Evocation","Abjuration","Divination","Conjuration","Enchantment","Illusion","Necromancy","Transmutation"])
+		subClassChoice = choice(["Abjuration","Bladesinging","Chronurgy","Conjuration","Divination","Enchantment","Evocation","Graviturgy","Illusion","Invention","Lore Mastery","Necromancy","Onomancy","Psionics","Theurgy", "Transmutation","War Magic"]);
+		finalClass = "Wizard of the School of " + subClassChoice;
 		}
 
 	if (choice(["dual", "single", "single", "single"]) == "single") {
-		return finalClass;
+		return [finalClass, randomClass, subClassChoice, "", "", ""];
 	}
+	
+	// otherwise, dual class
 	
 	else {
 			// https://medium.com/javascript-in-plain-english/how-to-remove-a-specific-item-from-an-array-in-javascript-a49b108404c
@@ -196,80 +337,109 @@ function genClass() {
 			classList.splice(index, 1) 
 		}
 
-		randomClass = choice(classList);
-		var secondClass = ''
+		var secondRandomClass = choice(classList);
+		var secondFinalClass = ''
+		var secondSubClassChoice = ''
 
-		if (randomClass == "Artificer") {
-			secondClass = choice(["Alchemist","Artillerist","Battle Smith"]) + " Artificer"
+		if (secondRandomClass == "Artificer") {
+			secondSubClassChoice = choice(["Alchemist","Armorer","Artillerist","Battle Smith"]);
+			secondFinalClass = secondSubClassChoice + " Artificer";
 			}
 
-		else if (randomClass == "Barbarian") {
-			secondClass = "Path of the " + choice(["Beast","Berserker","Wild Soul","Totem Warrior"]) + " Barbarian"
+		else if (secondRandomClass == "Barbarian") {
+			secondSubClassChoice = choice(["Ancestral Guardian","Battle Rager","Beast","Berserker","Juggernaut","Storm Herald","Wild Soul","Totem Warrior","Zealot"]);
+			secondFinalClass = "Path of the " + secondSubClassChoice + " Barbarian";
 			}
 
-		else if (randomClass == "Bard") {
-			secondClass = "Bard of the College of " + choice(["Creation","Eloquence","Lore","Valor","Glamour","Whispers"])
+		else if (secondRandomClass == "Bard") {
+			secondSubClassChoice = choice(["Creation","Eloquence","Glamour","Lore","Satire","Swords","Valor","Whispers"]);
+			secondFinalClass = "Bard of the College of " + secondSubClassChoice;
 			}
 
-		else if (randomClass == "Blood Hunter") {
-			secondClass = "Blood Hunter of the Order of the " + choice(["Ghostslayer","Lycan","Mutant","Profane Soul"])
+		else if (secondRandomClass == "Blood Hunter") {
+			secondSubClassChoice = choice(["Ghostslayer","Lycan","Mutant","Profane Soul"]);
+			secondFinalClass = "Blood Hunter of the Order of the " + secondSubClassChoice;
 			}
 
-		else if (randomClass == "Cleric") {
-			secondClass = choice(["Knowledge","Life","Light","Tempest","Trickery","Nature"]) + " Domain Cleric"
+		else if (secondRandomClass == "Cleric") {
+			secondSubClassChoice = choice(["Ambition","Arcana","Blood","Death","Forge","Grave","Knowledge","Life","Light","Nature","Order","Protection","Solidarity","Strength","Tempest","Trickery","Twilight","Unity","War","Zeal"]);
+			secondFinalClass = secondSubClassChoice + " Domain Cleric";
 			}
 
-		else if (randomClass == "Druid") {
-			secondClass = "Druid of the Circle of " + choice(["the Land","Wildfire","the Moon"])
+		else if (secondRandomClass == "Druid") {
+			secondSubClassChoice = choice(["Dreams","the Land","the Moon","the Shepherd","Spores","Stars","Twilight","Wildfire"]);
+			secondFinalClass = "Druid of the Circle of " + secondSubClassChoice;
+			// adapted from https://stackoverflow.com/a/9323226/11412009
+			// this shortens the secondSubClassChoice to the last word (e.g. "the Shepherd" to just "Shepherd") to work with dnd5e.wikidot.com's url system
+			var lastWordIndex = secondSubClassChoice.lastIndexOf(" ");
+			secondSubClassChoice = secondSubClassChoice.substring(0, lastWordIndex);
 			}
 
-		else if (randomClass == "Fighter") {
-			secondClass = choice(['Arcane Archer', 'Banneret', 'Brute', 'Battle Master', 'Cavalier', 'Champion', 'Eldritch Knight', 'Monster Hunter', 'Samurai', 'Scout', 'Sharpshooter', 'Rune Knight', 'Psychic Warrior']) + " Fighter"
+		else if (secondRandomClass == "Fighter") {
+			secondSubClassChoice = choice(["Arcane Archer","Banneret","Brute","Battle Master","Cavalier","Champion","Echo Knight","Eldritch Knight","Monster Hunter","Psi Knight","Psychic Warrior","Rune Knight","Samurai","Scout", "Sharpshooter"]);
+			secondFinalClass = secondSubClassChoice + " Fighter";
 			}
 
-		else if (randomClass == "Monk") {
-			secondClass = "Monk practicing the Way of " + choice(["Mercy","the Astral Self","the Open Hand","the Four Elements","the Shadow"])
+		else if (secondRandomClass == "Monk") {
+			secondSubClassChoice = choice(["Mercy","the Astral Self","the Cobalt Soul","Drunken Master","the Four Elements","the Kensei","the Long Death","the Open Hand","the Shadow","the Soul Knife","Tranquility"]);
+			secondFinalClass = "Monk practicing the Way of " + secondSubClassChoice;
 			}
 
-		else if (randomClass == "Paladin") {
-			secondClass = "Paladin bound by the Oath of " + choice(["Venegence","Devotion","Heroism","the Watchers","the Ancients"])
+		else if (secondRandomClass == "Paladin") {
+			secondSubClassChoice = choice(["the Ancients","Conquest","the Crown","Devotion","Heroism","Redemption","Treachery","Venegence","the Watchers", "Oathbreaker"]);
+			if (secondSubClassChoice == "Oathbreaker") {
+				secondFinalClass = "Oathbreaker Paladin";
+			}
+			else {
+				secondFinalClass = "Paladin bound by the Oath of " + secondSubClassChoice;
+			}
 			}
 
-		else if (randomClass == "Ranger") {
-			secondClass = choice(["Hunter","Beast Master", "Swarmkeeper"]) + " Ranger"
+		else if (secondRandomClass == "Ranger") {
+			secondSubClassChoice = choice(["Beast Master","Fey Wanderer","Gloom Stalker","Horizon Walker","Hunter","Monster Slayer","Primeval Guardian","Swarmkeeper"]);
+			secondFinalClass = secondSubClassChoice + " Ranger";
 			}
 
-		else if (randomClass == "Rogue") {
-			secondClass = choice(["Soulknife","The Revived","Thief","Assassin","Arcane Trickster"]) + " Rogue"
+		else if (secondRandomClass == "Rune Scribe") {
+			secondSubClassChoice = "Rune Scribe";
+			secondFinalClass = "Rune Scribe";
+		}
+
+		else if (secondRandomClass == "Rogue") {
+			secondSubClassChoice = choice(["Arcane Trickster","Assassin","Inquisitive","Mastermind","Revived","Scout","Soulknife","Swashbuckler","Thief"]);
+			secondFinalClass = secondSubClassChoice + " Rogue";
 			}
 
-		else if (randomClass == "Sorcerer") {
-			secondClass = choice(["Draconic Bloodline","Wild","Aberrant Mind","Clockwork Soul"]) + " Sorcerer"
+		else if (secondRandomClass == "Sorcerer") {
+			secondSubClassChoice = choice(["Aberrant Mind","Clockwork Soul","Draconic Bloodline","Divine Soul","Giant Soul","Phoenix","Psionic Soul","Pyromancy","Runechild","Sea","Shadow Magic","Stone","Storm","Wild"]);
+			secondFinalClass = secondSubClassChoice + " Sorcerer";
 			}
 
-		else if (randomClass == "Warlock") {
-			secondClass = "Warlock empowered by the " + choice(["Archfey","Great Old One","Fiend","Lurker in the Deep","Noble Genie"])
+		else if (secondRandomClass == "Warlock") {
+			secondSubClassChoice = choice(["Archfey","Celestial","Fiend","Great Old One","Hexblade","Kraken","Lurker in the Deep","Noble Genie","Raven Queen","Seeker","Undying"]);
+			secondFinalClass = "Warlock empowered by the " + secondSubClassChoice;
 			}
 
-		else if (randomClass == "Wizard") {
-			secondClass = "Wizard of the School of " + choice(["Psionics","Onomancy","Evocation","Abjuration","Divination","Conjuration","Enchantment","Illusion","Necromancy","Transmutation"])
+		else if (secondRandomClass == "Wizard") {
+			secondSubClassChoice = choice(["Abjuration","Bladesinging","Chronurgy","Conjuration","Divination","Enchantment","Evocation","Graviturgy","Illusion","Invention","Lore Mastery","Necromancy","Onomancy","Psionics","Theurgy", "Transmutation","War Magic"]);
+			secondFinalClass = "Wizard of the School of " + secondSubClassChoice;
 			}
-
-		return finalClass + " / " + secondClass;
+		
+		return [finalClass, randomClass, subClassChoice, " / " + secondFinalClass, secondRandomClass, secondSubClassChoice];
 	}
 }
 
 function genBackstory() {
-    var randomBackstory = choice(backstoryList);
+    randomBackstory = choice(backstoryList);
 
     if (["A", "E", "I", "O", "U"].includes(randomBackstory.charAt(0))) {
-        randomBackstory = "an " + randomBackstory;
+        fixedBackstory = "an " + randomBackstory;
 	}
     else {
-        randomBackstory = "a " + randomBackstory;
+        fixedBackstory = "a " + randomBackstory;
 	}
 
-    return "with a past as " + randomBackstory;
+    return "with a past as " + fixedBackstory;
 }
 
 //why aren't these built in?
