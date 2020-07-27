@@ -226,7 +226,7 @@ function genRace() {
         charRace = randomRace;
 	}
 
-    charRace = choice(["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "Revenant "]) + charRace;
+    //charRace = choice(["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "Revenant "]) + charRace;
 
     return [charRace, randomRace];
 }
