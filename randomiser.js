@@ -148,10 +148,14 @@ function genRace() {
 	var charRace = '';
 
     if (randomRace == "Elf" || randomRace == "Half-Elf") { 
-        charRace = choice(['High Elf', 'Wood Elf', 'Drow', 'Sea Elf', 'Eladrin', 'Shadar-kai']);
+        charRace = choice(['High Elf', 'Wood Elf', 'Drow', 'Sea Elf', 'Eladrin', 'Shadar-kai', 'Pallid']);
         
 		if (randomRace == "Half-Elf") { 
             charRace = "Half-" + charRace;
+		}
+		
+		else if (randomRace == "Eladrin") {
+			charRace = choice(['Spring', 'Summer', 'Autumn', 'Winter']) + randomRace;
 		}
 	}
 
@@ -271,6 +275,7 @@ function genClass() {
 		// this shortens the subClassChoice to the last word (e.g. "the Shepherd" to just "Shepherd") to work with dnd5e.wikidot.com's url system
 		var lastWordIndex = finalClass.lastIndexOf(" ");
 		subClassChoice = subClassChoice.substring(0, lastWordIndex);
+		console.log(subClassChoice);
 		}
 
 	else if (randomClass == "Fighter") {
