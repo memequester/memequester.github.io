@@ -80,8 +80,10 @@ body {
 	outline-style: none;
 	
 	position: fixed;
-	top: 50%;
-	left: 50%;
+	top: 25%;
+	left: 25%;
+    width: 50%;
+    height: 50%;
 }
 .generated {
 	color: white;
