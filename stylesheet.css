@@ -11,6 +11,7 @@ body {
 	text-align: center;
 	padding: 15px 0px;
 	border: none;
+    border-radius: 10px;
 	outline-style: none;
 	
 	cursor: pointer;
@@ -52,6 +53,35 @@ body {
 	position: fixed;
 	top: 1%;
 	left: 1%;
+}
+.homelink {
+    font-family: sans-serif;
+	font-size: 13px;
+	text-align: left;
+	border: none;
+	outline-style: none;
+	
+	position: fixed;
+	top: 1%;
+	left: 1%;
+}
+.link {
+    font-family: sans-serif;
+	font-size: 13px;
+	text-align: left;
+	border: none;
+	outline-style: none;
+}
+.subpage_container {
+    font-family: sans-serif;
+	font-size: 13px;
+	text-align: center;
+	border: none;
+	outline-style: none;
+	
+	position: fixed;
+	top: 50%;
+	left: 50%;
 }
 .generated {
 	color: white;

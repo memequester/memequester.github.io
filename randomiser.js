@@ -10,7 +10,7 @@ var classList = ["Artificer", "Barbarian", "Bard", "Blood Hunter", "Cleric", "Dr
 //var backgroundList = ['Acolyte', 'Anthropologist', 'Archaeologist', 'Charlatan', 'City Watch', 'Clan Crafter', 'Cloistered Scholar', 'Courtier', 'Criminal', 'Entertainer', 'Faceless', 'Faction Agent', 'Far Traveler', 'Folk Hero', 'Gladiator', 'Guild Artisan', 'Guild Merchant', 'Haunted One', 'House Agent', 'Hermit', 'Inheritor', 'Investigator', 'Knight', 'Knight of the Order', 'Mercenary Veteran', 'Noble', 'Outlander', 'Pirate', 'Sage', 'Sailor', 'Soldier', 'Spy', 'Urban Bounty Hunter', 'Urchin', 'Uthgardt Tribe Member', 'Waterdhavian Noble'];
 
 // hence, use a simpler list of backgrounds. all of these backgrounds have dnd.wikidot.com pages.
-var fixedBackgroundList = ['Acolyte', 'Sailor', 'Archaeologist', 'Criminal', 'Charlatan', 'Faceless', 'Urchin', 'Hermit', 'Entertainer', 'Soldier', 'Inheritor', 'Outlander', 'Noble', 'Anthropologist', 'Sage', 'Courtier', 'Waterdhavian Noble', 'Cloistered Scholar', 'House Agent', 'Faction Agent', 'Far Traveler', 'Mercenary Veteran', 'Guild Artisan', 'Folk Hero', 'Haunted One', 'Clan Crafter', 'Uthgardt Tribe Member', 'Urban Bounty Hunter', 'Knight Of The Order']
+var fixedBackgroundList = ['Acolyte', 'Sailor', 'Archaeologist', 'Criminal', 'Charlatan', 'Faceless', 'Urchin', 'Hermit', 'Entertainer', 'Soldier', 'Inheritor', 'Outlander', 'Noble', 'Anthropologist', 'Sage', 'Courtier', 'Waterdhavian Noble', 'Cloistered Scholar', 'House Agent', 'Faction Agent', 'Far Traveler', 'Mercenary Veteran', 'Guild Artisan', 'Folk Hero', 'Haunted One', 'Clan Crafter', 'Uthgardt Tribe Member', 'Urban Bounty Hunter', 'Knight Of The Order'];
 
 var baseRace = '';
 
