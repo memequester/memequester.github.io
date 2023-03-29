@@ -1,18 +1,22 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
     <head>
-        <meta name="viewport" content="initial-scale=1.0, user-scalable=no"> <!--'borrowed' from https://seblague.github.io/ideagenerator/--->
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title>Blairware</title>
 		<link rel="stylesheet" href="stylesheet.css">
+        <!-- Bootstrap 4 -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <!-- Favicons for different browsers / devices -->
         <!-- SVGs are pretty -->
-        <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+        <link rel="icon" type="image/svg+xml" href="favicons/favicon.svg">
         <!-- For iPad -->
-        <link rel="apple-touch-icon" type="image/png" sizes="167x167" href="favicon-167x167.png">
+        <link rel="apple-touch-icon" type="image/png" sizes="167x167" href="favicons/favicon-167x167.png">
         <!-- For iPhone -->
-        <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="favicon-180x180.png">
+        <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="favicons/favicon-180x180.png">
         <!-- For Android -->
-        <link rel="icon" type="image/png" sizes="48x48" href="favicon-48x48.png">
-        <link rel="icon" type="image/png" sizes="192x192" href="favicon-192x192.png">
+        <link rel="icon" type="image/png" sizes="48x48" href="favicons/favicon-48x48.png">
+        <link rel="icon" type="image/png" sizes="192x192" href="favicons/favicon-192x192.png">
+        
     </head>
 
     <body>
@@ -23,8 +27,59 @@
                 </g>
             </svg>
         </div>
-        <div class="projects-carousel"> 
-        
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+                <li data-target="#myCarousel" data-slide-to="3"></li>
+            </ol>
+
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner">
+                <div class="item active">
+                    <img src="aiden.png" alt="A poster of a robot endoskeleton">
+                    <div class="carousel-caption">
+                        <h3>TR4-C</h3>
+                        <p>A robot-fighting turn-based RPG for Android</p>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <img src="futaba.png" alt="A low-angle screenshot of a grassy videogame level">
+                    <div class="carousel-caption">
+                        <h3>Beaten to the Punch</h3>
+                        <p>An <i>Uncharted</i>-style third-person shooter level</p>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <img src="skyrim article.png" alt="Skryim logo, a stylised dragon">
+                    <div class="carousel-caption">
+                        <h3>Skyrim UI Rework</h3>
+                        <p>A redesign of the menus of <i>The Elder Scrolls V: Skyrim</i></p>
+                    </div>
+                </div>
+                
+                <div class="item">
+                    <img src="qotsa.jpg" alt="An astronaut waving at the camera">
+                    <div class="carousel-caption">
+                        <h3>Liftoff!</h3>
+                        <p>A fast-paced collection challenge on a desolate moon</i></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Left and right controls -->
+            <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+                <span class="sr-only">Next</span>
+            </a>
         </div>
         <h3>wowee look a portfolio</h3>
         <p>game jam games</p>
@@ -35,5 +90,8 @@
         <hr>
         <br>
         <a href="/pages/dnd.html" class="link">D&amp;D Character Idea Generator</a>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     </body>
 </html>
