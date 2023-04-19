@@ -15,27 +15,6 @@ body {
     width: 50%;
 }
 
-button {
-    text-align: center;
-	padding: 15px 0px;
-	border: none;
-    border-radius: 10px;
-	outline-style: none;
-	
-	cursor: pointer;
-    
-    /* Disable text selection: https://stackoverflow.com/questions/826782/how-to-disable-text-selection-highlighting */
-	-webkit-touch-callout: none; /* iOS Safari */
-	-webkit-user-select: none; /* Safari */
-	-moz-user-select: none; /* Old versions of Firefox */
-	-ms-user-select: none; /* Internet Explorer/Edge */
-	user-select: none; /* Chrome, Opera and Firefox */
-
-	/* 
-	Prevent double-tapping on button from zooming page on mobile
-	https://developer.mozilla.org/en-US/docs/Web/CSS/touch-action
-	*/
-	touch-action: manipulation;
 }
 .generate {
 	color: white;
