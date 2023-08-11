@@ -69,22 +69,7 @@ function randomise() {
 
 
 function openInNewTab(subpage) {
-	// adapted from https://stackoverflow.com/a/57536096/11412009
 	const win = window.open('http://dnd5e.wikidot.com/' + subpage, '_blank');
-	
-	/* pointless and convoluted checks to see if the page is empty or not. 
-	fetch("https://example.com/pluginchangelog.txt", {credentials: "omit"}).then(resp => resp.text()).then(text => {
-  	if (text.search("(yet) exist") > -1) {
-		const win = window.open('http://dnd5e.wikidot.com/' + subpage, '_blank');
-		}
-		
-	else {
-		
-	}
-	})
-	*/
-		
-
 }
 
 function getSubpage(source) {

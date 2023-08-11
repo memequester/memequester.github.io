@@ -11,6 +11,27 @@
     background-color: #FF2449;
 }
 
-nav.navbar-dark {
-    background-color: #130f3d;
+#topbanner {
+    background-color: #281531;
 }
+
+#projects {
+    background-color: #3B2545;
+}
+
+#navbarDropdown {
+    color: #aaaaaa;
+}
+
+a.dropdown-item {
+    color: #fff
+}
+
+/* body.page {
+    background-color: #1C1221
+} */
+
+/* div.card {
+    background-color: #1C1221
+    background-color: #170B1C
+} */
