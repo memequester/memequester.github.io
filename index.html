@@ -24,27 +24,27 @@
         
     </head>
 
-    <body>
+    <body class="page">
         <header style="height: 6rem">
-            <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+            <nav id="topbanner" class="navbar navbar-expand-md fixed-top">
                 <div class="container">
                     <a class="navbar-brand" href="#">
                         <div class="d-flex flex-column">
                             <img src="images/blairware light.svg" alt="blairware logo" width="300">
-                            <p class="text-center fw-light" style="height: 1rem">Ryan Blair | Programmer</p>
+                            <p class="text-center text-white fw-light" style="height: 1rem">Ryan Blair | Programmer</p>
                         </div>
                     </a>
                     <div class="navbar-expand" id="navbarSupportedContent">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                                <a class="nav-link active text-white" aria-current="page" href="#">Home</a>
                             </li>
 
                             <li class="dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     Projects
                                 </a>
-                                <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end dropdown-menu-lg-start" aria-labelledby="navbarDropdown">
+                                <ul id="projects" class="dropdown-menu dropdown-menu-end dropdown-menu-lg-start" aria-labelledby="navbarDropdown">
                                     <li><a class="dropdown-item" href="#">Nightshift at B-Mart</a></li>
                                     <li><a class="dropdown-item" href="#">TR4-C</a></li>
                                     <li><a class="dropdown-item" href="#">Beaten to the Punch</a></li>
@@ -74,7 +74,11 @@
                             <img src="images/001.png" class="card-img-top">
                             <div class="card-body">
                                 <h5>Nightshift at B-Mart</h5>
-                                <p><span class="badge bg-dark px-auto">Unreal 5</span><span class="badge bg-primary mx-2 px-auto">Blueprints</span><span class="badge ulster px-auto">University</span></p>
+                                <p>
+                                    <span class="badge bg-dark px-auto">Unreal 5</span>
+                                    <span class="badge bg-primary mx-1 px-auto">Blueprints</span>
+                                    <span class="badge ulster px-auto">University</span>
+                                </p>
                                 <p class="card-text">A shop management simulator for Oculus Quest 2</p>
                                 <div class="px-2 text-left">
                                     <ul>
@@ -93,7 +97,12 @@
                             <img src="images/001.png" class="card-img-top">
                             <div class="card-body">
                                 <h5>TR4-C</h5>
-                                <p><span class="badge bg-dark px-auto">Unreal 5</span><span class="badge bg-primary mx-2 px-auto">Blueprints</span><span class="badge ulster px-auto">University</span></p>
+                                <p>
+                                    <span class="badge bg-dark px-auto">Unreal 5</span>
+                                    <span class="badge bg-secondary mx-1 px-auto">UMG</span>
+                                    <span class="badge bg-primary px-auto">Blueprints</span>
+                                    <span class="badge ulster mx-1 px-auto">University</span>
+                                </p>
                                 <p class="card-text">A turn-based bot-battling RPG for Android</p>
                                 <div class="px-2 text-left">
                                     <ul>
@@ -101,7 +110,7 @@
                                         <li>A* pathfinding for grid-based battle system</li>
                                         <li>Finite State Machine for enemy robot behaviour</li>
                                         <li>Logic for tap-and-drag touch controls in battles</li>
-                                        <li>Battle HUD implementation</li>
+                                        <li>Battle HUD programming and implementation</li>
                                         <li>Managing source control for a team of 5</li>
                                     </ul>
                                 </div>
@@ -119,13 +128,17 @@
                             <img src="images/001.png" class="card-img-top">
                             <div class="card-body">
                                 <h5>Hypernova</h5>
-                                <p><span class="badge px-auto godot">Godot 4</span><span class="badge godot mx-2 px-auto">GDScript</span><span class="badge itch px-auto">Game Jam</span></p>
+                                <p>
+                                    <span class="badge px-auto godot">Godot 4</span>
+                                    <span class="badge godot mx-1 px-auto">GDScript</span>
+                                    <span class="badge itch px-auto">Game Jam</span>
+                                </p>
                                 <p class="card-text">A loosely <i>Gyruss</i>-inspired shmup made for Block Born '90's Arcade Jam</p>
                                 <div class="px-2 text-left">
                                     <ul>
-                                        <li>Solo project finished in 7 days</li>
                                         <li>All design, art and code created during jam time</li>
                                         <li>CRT shader ported from HLSL to Godot shader language</li>
+                                        <li>Assets created by rendering 3D models to spritesheets</li>
                                         <li>Solo project finished and packaged for Web in 7 days</li>
                                     </ul>
                                 </div>
@@ -137,16 +150,18 @@
                             <img src="images/001.png" class="card-img-top">
                             <div class="card-body">
                                 <h5>Operation Greenhorn</h5>
-                                <p><span class="badge bg-dark px-auto">Unreal 5</span>
-                                    <span class="badge bg-secondary mx-2 px-auto">UMG</span>
+                                <p>
+                                    <span class="badge bg-dark px-auto">Unreal 5</span>
+                                    <span class="badge bg-secondary mx-1 px-auto">UMG</span>
                                     <span class="badge bg-primary px-auto">Blueprints</span>
-                                    <span class="badge itch mx-2 px-auto">Game Jam</span></p>
+                                    <span class="badge itch mx-1 px-auto">Game Jam</span>
+                                </p>
                                 <p class="card-text">A reverse-tower-defense game made for GMTK Game Jam 2023</p>
                                 <ul>
-                                    <li>Solo project finished in 7 days</li>
-                                    <li>All design, art and code created during jam time</li>
-                                    <li>CRT shader ported from HLSL to Godot shader language</li>
-                                    <li>Solo project finished and packaged for Web in 7 days</li>
+                                    <li>UI design, programming, and implementation with existing systems</li>
+                                    <li>Gameplay concept</li>
+                                    <li>Managing source control for a team of 5</li>
+                                    <li>UE5 build released for Windows within 48 hours</li>
                                 </ul>
                             </div>
                         </div>
@@ -156,7 +171,11 @@
                             <a href="/projects/dnd" class="link"><img src="images/001.png" class="card-img-top"></a>
                             <div class="card-body">
                                 <h5>Liftoff!</h5>
-                                <p><span class="badge bg-dark px-auto">Unreal 5</span><span class="badge bg-primary mx-2 px-auto">Blueprints</span><span class="badge itch px-auto">Game Jam</span></p>
+                                <p>
+                                    <span class="badge bg-dark px-auto">Unreal 5</span>
+                                    <span class="badge bg-primary mx-1 px-auto">Blueprints</span>
+                                    <span class="badge itch px-auto">Game Jam</span>
+                                </p>
                                 <p class="card-text">A frantically-made, frantically-played collectathon made for NI Student Game Jam 22 </p>
                             </div>
                         </div>
