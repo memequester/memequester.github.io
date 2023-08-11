@@ -1,12 +1,12 @@
 <!doctype html>
-<!-- caught you 😳 © Ryan Blair 2023 -->
+<!-- I caught you 😳 © Ryan Blair 2023 -->
 <!-- made with Bootstrap 5.2, absolute legends -->
 <html lang="en">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Blairware</title>
-		<link rel="stylesheet" href="stylesheet.css">
+		<link rel="stylesheet" href="css/home.css">
         
         <!-- Bootstrap 5 -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
@@ -65,78 +65,106 @@
                 <h1 class="display-3 fw-bold">Hey!</h1>
                 <div class="col-lg-6 mx-auto">I'm Ryan, a games programmer from Northern Ireland. I've been making computers solve my problems for me for nearly a decade. <br><br> I'm currently studying Games Design in Ulster University, working with Unreal Engine 5. <br><br> Here you can find info on some of the university projects I've worked on, as well as some game jams and personal projects.</div>
             </div>
+            <hr>
+            <h2 class="text-center">University Projects</h2>
             <div class="container">
                 <div class="row">
-                    <div class="col">
-                        <div class="card shadow mx-auto" style="width: 24rem">
+                    <div class="col py-3">
+                        <div class="card shadow mx-auto" style="width: 26rem">
                             <img src="images/001.png" class="card-img-top">
                             <div class="card-body">
                                 <h5>Nightshift at B-Mart</h5>
-                                <p class="card-text">An Oculus Quest VR game that has really been a pain in my ass</p>
-                                <div class="px-4 my-3 text-left">- stuff and things <br> - things and stuff <br> - stuff and stuff <br> - things and things</div>
-                                <a href="#" class="btn btn-secondary">More about this project</a>
+                                <p><span class="badge bg-dark px-auto">Unreal 5</span><span class="badge bg-primary mx-2 px-auto">Blueprints</span><span class="badge ulster px-auto">University</span></p>
+                                <p class="card-text">A shop management simulator for Oculus Quest 2</p>
+                                <div class="px-2 text-left">
+                                    <ul>
+                                        <li>Behaviour trees for three NPC types</li>
+                                        <li>Player behaviour &amp; interaction programming</li>
+                                        <li>Gameplay design</li>
+                                        <li>Camera system with Render Targets and HLSL for a CRT effect</li>
+                                        <li>Leading and managing source control for a team of 12</li>  
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col">
-                        <div class="card shadow mx-auto" style="width: 24rem">
+                    <div class="col py-3">
+                        <div class="card shadow mx-auto" style="width: 26rem">
                             <img src="images/001.png" class="card-img-top">
                             <div class="card-body">
                                 <h5>TR4-C</h5>
-                                <p class="card-text">A turn-based bot-battling nightmare project for Android</p>
-                                <a href="#" class="btn btn-secondary">More about this project</a>
+                                <p><span class="badge bg-dark px-auto">Unreal 5</span><span class="badge bg-primary mx-2 px-auto">Blueprints</span><span class="badge ulster px-auto">University</span></p>
+                                <p class="card-text">A turn-based bot-battling RPG for Android</p>
+                                <div class="px-2 text-left">
+                                    <ul>
+                                        <li>Random battle arena layout generation</li>
+                                        <li>A* pathfinding for grid-based battle system</li>
+                                        <li>Finite State Machine for enemy robot behaviour</li>
+                                        <li>Logic for tap-and-drag touch controls in battles</li>
+                                        <li>Battle HUD implementation</li>
+                                        <li>Managing source control for a team of 5</li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col">
-                        <div class="card shadow mx-auto" style="width: 24rem">
+                </div>
+            </div>
+            <hr>
+            <h2 class="text-center">Game Jams</h2>
+            <div class="container">
+                <div class="row">
+                    <div class="col py-3">
+                        <div class="card shadow mx-auto" style="width: 21rem">
                             <img src="images/001.png" class="card-img-top">
+                            <div class="card-body">
+                                <h5>Hypernova</h5>
+                                <p><span class="badge px-auto godot">Godot 4</span><span class="badge godot mx-2 px-auto">GDScript</span><span class="badge itch px-auto">Game Jam</span></p>
+                                <p class="card-text">A loosely <i>Gyruss</i>-inspired shmup made for Block Born '90's Arcade Jam</p>
+                                <div class="px-2 text-left">
+                                    <ul>
+                                        <li>Solo project finished in 7 days</li>
+                                        <li>All design, art and code created during jam time</li>
+                                        <li>CRT shader ported from HLSL to Godot shader language</li>
+                                        <li>Solo project finished and packaged for Web in 7 days</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col py-3">
+                        <div class="card shadow mx-auto" style="width: 21rem">
+                            <img src="images/001.png" class="card-img-top">
+                            <div class="card-body">
+                                <h5>Operation Greenhorn</h5>
+                                <p><span class="badge bg-dark px-auto">Unreal 5</span>
+                                    <span class="badge bg-secondary mx-2 px-auto">UMG</span>
+                                    <span class="badge bg-primary px-auto">Blueprints</span>
+                                    <span class="badge itch mx-2 px-auto">Game Jam</span></p>
+                                <p class="card-text">A reverse-tower-defense game made for GMTK Game Jam 2023</p>
+                                <ul>
+                                    <li>Solo project finished in 7 days</li>
+                                    <li>All design, art and code created during jam time</li>
+                                    <li>CRT shader ported from HLSL to Godot shader language</li>
+                                    <li>Solo project finished and packaged for Web in 7 days</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col py-3">
+                        <div class="card shadow mx-auto" style="width: 21rem">
+                            <a href="/projects/dnd" class="link"><img src="images/001.png" class="card-img-top"></a>
                             <div class="card-body">
                                 <h5>Liftoff!</h5>
+                                <p><span class="badge bg-dark px-auto">Unreal 5</span><span class="badge bg-primary mx-2 px-auto">Blueprints</span><span class="badge itch px-auto">Game Jam</span></p>
                                 <p class="card-text">A frantically-made, frantically-played collectathon made for NI Student Game Jam 22 </p>
-                                <a href="#" class="btn btn-secondary">More about this project</a>
                             </div>
                         </div>
                     </div>
+                    <footer style="height: 6rem"></footer>
                 </div>
-                <div class="row py-5">
-                    <div class="col">
-                        <div class="card shadow mx-auto" style="width: 24rem">
-                            <img src="images/001.png" class="card-img-top">
-                            <div class="card-body">
-                                <h5>Skyrim UI Rework</h5>
-                                <p class="card-text">A reimagining of <i>The Elder Scrolls V: Skyrim</i>'s menus</p>
-                                <a href="#" class="btn btn-secondary">More about this project</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card shadow mx-auto" style="width: 24rem">
-                            <img src="images/001.png" class="card-img-top">
-                            <div class="card-body">
-                                <h5>Beaten to the Punch</h5>
-                                <p class="card-text">An <i>Uncharted</i>-inspired level design project for a third-person action shooter</p>
-                                <a href="#" class="btn btn-secondary">More about this project</a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                </div>
-            </div>
-        
-            <div class="container-md">
-                <h3>wowee look a portfolio</h3>
-                <p>game jam games</p>
-                <p>3d models</p>
-                <p>particle effects</p>
-                <p>writing about games</p>
-                <br>
-                <hr>
-                <br>
-                <a href="/pages/dnd.html" class="link">D&amp;D Character Idea Generator</a>
             </div>
         </main>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
     </body>
 </html>
