@@ -8,21 +8,57 @@
     </head>
 
     <body>
-        <a href="/" class="intro">Home</a>
-        <\br>
-		<p class="intro">This is a D&#38;D character idea generator. Every race, class and background accessible on <a href="http://dnd5e.wikidot.com">dnd5e.wikidot.com</a> has a chance to be generated. Clicking on one of these attributes will open that attribute's wikidot page in a new tab.</p>
-        
-		<button class="generate" onclick="randomise()">Generate Character</button>
-        
-        <div>
-			<p class="generated">
-				<span id="Alignment" 	class="spanA"></span>
-				<a id="hRace" 	 		class="spanR"	href='#' 	target="_blank"></a>
-				<a id="hFirstClass" 	class="spanC"	href='#'	target="_blank"></a>
-				<a id="hSecondClass"	class="spanC"	href='#'	target="_blank"></a>
-				<a id="hBackground" 	class="spanB"	href='#'	target="_blank"></a>
-				
-			</p>
-		</div>
-    </body>
+		<header style="height: 6rem">
+            <nav id="topbanner" class="navbar navbar-expand-md fixed-top">
+                <div class="container">
+                    <a class="navbar-brand" href="./">
+                        <div class="d-flex flex-column">
+                            <img src="./images/blairware light.svg" alt="blairware logo" width="300">
+                            <p class="text-center text-white fw-light" style="height: 1rem">Ryan Blair | Programmer</p>
+                        </div>
+                    </a>
+                    <div class="navbar-expand" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link active text-white" aria-current="page" href="#">Home</a>
+                            </li>
+
+                            <li class="dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Projects
+                                </a>
+                                <ul id="projects" class="dropdown-menu dropdown-menu-end dropdown-menu-lg-start" aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item" href="#">Nightshift at B-Mart</a></li>
+                                    <li><a class="dropdown-item" href="#">TR4-C</a></li>
+                                    <li><a class="dropdown-item" href="#">Beaten to the Punch</a></li>
+                                    <li><a class="dropdown-item" href="#">Skyrim UI Rework</a></li>
+                                    <li><a class="dropdown-item" href="#">Liftoff!</a></li>
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+		<main>
+			<a href="/" class="intro">Home</a>
+			<p class="intro">This is a D&#38;D character idea generator. Every race, class and background accessible on <a href="http://dnd5e.wikidot.com">dnd5e.wikidot.com</a> has a chance to be generated. Clicking on one of these attributes will open that attribute's wikidot page in a new tab.</p>
+			
+			<button class="generate" onclick="randomise()">Generate Character</button>
+			
+			<div>
+				<p class="generated">
+					<span id="Alignment" 	class="spanA"></span>
+					<a id="hRace" 	 		class="spanR"	href='#' 	target="_blank"></a>
+					<a id="hFirstClass" 	class="spanC"	href='#'	target="_blank"></a>
+					<a id="hSecondClass"	class="spanC"	href='#'	target="_blank"></a>
+					<a id="hBackground" 	class="spanB"	href='#'	target="_blank"></a>
+					
+				</p>
+			</div>
+			<footer style="height: 6rem"></footer>
+    	</main>
+	</body>
 </html>
