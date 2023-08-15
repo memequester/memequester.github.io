@@ -1,16 +1,22 @@
-.godot {
-    color: white;
-    background-color: #478cbf;
-}
-.ulster {
-    color: white;
-    background-color: #130f3d;
-}
-.itch {
-    color: black;
-    background-color: #FF2449;
+.image-with-text {
+    position: relative;
+    margin: 0 auto;
 }
 
+.game-name {
+    position: absolute;
+    bottom: 0;
+    background-color: #000000;
+    background-color: #000000aa;
+    color:white;
+    font-size: 24px;
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+    transform: translate(0%, 12.5%);
+}
+
+/* colors */
 #topbanner {
     background-color: #281531;
 }
@@ -25,6 +31,19 @@
 
 a.dropdown-item {
     color: #fff
+}
+
+.godot {
+    background-color: #478cbf;
+}
+.ulster {
+    background-color: #130f3d;
+}
+.itch {
+    background-color: #FF2449;
+}
+.maya {
+    background-color: #36a1c6;
 }
 
 /* body.page {
