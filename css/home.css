@@ -46,6 +46,22 @@ a.dropdown-item {
     background-color: #36a1c6;
 }
 
+.adobexd {
+    background-color: #f75eee;
+}
+
+.js {
+    background-color: #efdb52;
+}
+
+.python {
+    background-color: #347ab4;
+}
+
+.monospace {
+    font-family: 'Courier New', Courier, monospace;
+}
+
 /* body.page {
     background-color: #1C1221
 } */
