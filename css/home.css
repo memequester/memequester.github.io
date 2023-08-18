@@ -16,6 +16,14 @@
     transform: translate(0%, 12.5%);
 }
 
+.badges {
+    margin-bottom: 8px;
+}
+
+.subtitle {
+    margin-bottom: 8px;
+}
+
 /* colors */
 #topbanner {
     background-color: #281531;
