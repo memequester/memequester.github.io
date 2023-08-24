@@ -30,7 +30,7 @@
                 <div class="container">
                     <a class="navbar-brand" href="../">
                         <div class="d-flex flex-column">
-                            <img src="../images/blairware light.svg" alt="blairware logo" width="300">
+                            <img src="../images/blairware light.svg" alt="blairware logo" width="250">
                             <p class="text-center text-white fw-light" style="height: 1rem">Ryan Blair | Programmer</p>
                         </div>
                     </a>
@@ -39,34 +39,90 @@
                             <li class="nav-item">
                                 <a class="nav-link active text-white" aria-current="page" href="../">Home</a>
                             </li>
-
-                            <li class="dropdown">
+                            <!-- <li class="nav-item">
+                                <a class="nav-link active text-white" aria-current="page" href="#">Résumé</a>
+                            </li> -->
+                            <!-- <li class="dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     Projects
                                 </a>
-                                <ul id="projects" class="dropdown-menu dropdown-menu-end dropdown-menu-lg-start" aria-labelledby="navbarDropdown">
-                                    <li><a class="dropdown-item" href="#">Nightshift at B-Mart</a></li>
-                                    <li><a class="dropdown-item" href="#">TR4-C</a></li>
-                                    <li><a class="dropdown-item" href="#">Beaten to the Punch</a></li>
-                                    <li><a class="dropdown-item" href="#">Skyrim UI Rework</a></li>
-                                    <li><a class="dropdown-item" href="#">Liftoff!</a></li>
+                                <ul id="projects" class="dropdown-menu dropdown-menu-end dropdown-menu-lg-end" aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item" href="#nightshift">Nightshift at B-Mart</a></li>
+                                    <li><a class="dropdown-item" href="#tr4c">TR4-C</a></li>
                                     <li><hr class="dropdown-divider"></li>
-                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                    <li><a class="dropdown-item" href="#hypernova">Hypernova</a></li>
+                                    <li><a class="dropdown-item" href="#greenhorn">Greenhorn</a></li>
+                                    <li><a class="dropdown-item" href="#liftoff">Liftoff!</a></li>
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li><a class="dropdown-item" href="#mapmaker">Metroidvania Map Widget</a></li>
+                                    <li><a class="dropdown-item" href="#dnd">D&amp;D Character Generator</a></li>
+
                                 </ul>
+                            </li> -->
+                            <li class="nav-link">
+                                <a href="https://twitter.com/RyanBlairware?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-size="large" data-dnt="true" data-show-count="false">Follow @RyanBlairware</a>
                             </li>
                         </ul>
                     </div>
                 </div>
             </nav>
         </header>
-        
+
         <main class="container">
             <div class="px-4 my-3 text-center">
                 <h1 class="display-3 fw-bold">Nightshift at B-Mart</h1>
-                <div class="col-lg-6 mx-auto">about the game</div>
+                <div class="col-lg-6 mx-auto">
+                    <p><i>Nightshift at B-Mart</i> was a  group project completed for my Year 2 Vertical Slice module. I designed and programmed the game alongside a teammate, and managed Github source control for our team of 12; six Games Design students, five Animation students, and a Sound Design student.</p>
+                    <p>Initially conceived as a <i>Papers, Please</i>-like puzzle sim, we quickly iterated on our idea to create <i>Nightshift at B-Mart</i>, an eerie shop management sim for Oculus Quest 2.</p>
+                    <br>
+                    <image src="../images/001.png"></image>
+                    <br>
+                    <br>
+                    <br>
+                    <div class="accordion accordion-flush" id="accordionExample">
+                        <div class="accordion-item">
+                          <h2 class="accordion-header" id="headingOne">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                              Behaviour trees
+                            </button>
+                          </h2>
+                          <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                            <div class="accordion-body text-start">
+                                <p><i>N@BM</i> had three NPC types with varying behaviours: typical customers, shoplifters, and a unique fugitive. I explored a few different options for creating their behaviour, including UE5's experimental StateTrees and a custom FSM, but I decided to stick with Behaviour Trees; our various NPCs only have a few distinct states that are typically progessed through linearly, so there was no need for a complex network of states and transitions.</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="accordion-item">
+                          <h2 class="accordion-header" id="headingTwo">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                              CCTV system
+                            </button>
+                          </h2>
+                          <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                            <div class="accordion-body text-start">
+                                <p>As the player is confined to their checkout counter, we devised a CCTV system mechanic to let the player monitor other areas of the store, taking some inspiration from <i>Five Nights at Freddy's</i>.</p>
+                                
+                            </div>
+                          </div>
+                        </div>
+                        <div class="accordion-item">
+                          <h2 class="accordion-header" id="headingThree">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                              Random generation & Wanted poster
+                            </button>
+                          </h2>
+                          <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                            <div class="accordion-body text-start">
+
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                </div>
             </div>
             <footer style="height: 6rem"></footer>
         </main>
+        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> <!-- mmm twitter -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
     </body>
 </html>

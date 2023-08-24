@@ -1,6 +1,7 @@
 .image-with-text {
     position: relative;
-    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 6px;
 }
 
 .game-name {
@@ -22,6 +23,14 @@
 
 .subtitle {
     margin-bottom: 8px;
+}
+
+.zoom-on-hover {
+    transition: transform .2s ease-in-out;
+}
+
+.zoom-on-hover:hover {
+    transform: scale(1.02);
 }
 
 /* colors */
