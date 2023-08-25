@@ -13,20 +13,20 @@
 
         <!-- Favicons for different browsers / devices -->
         <!-- SVGs are pretty -->
-        <link rel="icon" type="image/svg+xml" href="favicon.svg">
+        <link rel="icon" type="image/svg+xml" href="../favicon.svg">
         <!-- For iPad -->
-        <link rel="apple-touch-icon" type="image/png" sizes="167x167" href="favicon-167x167.png">
+        <link rel="apple-touch-icon" type="image/png" sizes="167x167" href="../favicon-167x167.png">
         <!-- For iPhone -->
-        <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="favicon-180x180.png">
+        <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="../favicon-180x180.png">
         <!-- For Android -->
-        <link rel="icon" type="image/png" sizes="48x48" href="favicon-48x48.png">
-        <link rel="icon" type="image/png" sizes="192x192" href="favicon-192x192.png">
+        <link rel="icon" type="image/png" sizes="48x48" href="../favicon-48x48.png">
+        <link rel="icon" type="image/png" sizes="192x192" href="../favicon-192x192.png">
         
     </head>
 
     <body class="page">
         <header style="height: 6rem">
-            <nav id="topbanner" class="navbar navbar-expand-md fixed-top">
+            <nav id="topbanner" class="navbar navbar-dark navbar-expand-lg">
                 <div class="container">
                     <a class="navbar-brand" href="../">
                         <div class="d-flex flex-column">
@@ -34,33 +34,16 @@
                             <p class="text-center text-white fw-light" style="height: 1rem">Ryan Blair | Programmer</p>
                         </div>
                     </a>
-                    <div class="navbar-expand" id="navbarSupportedContent">
-                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarBlairware" aria-controls="navbarBlairware" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon navbar-toggler-icon-light"></span>
+                    </button>  
+                    <div class="collapse navbar-collapse" id="navbarBlairware">
+                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 float-end">
                             <li class="nav-item">
-                                <a class="nav-link active text-white" aria-current="page" href="../">Home</a>
+                                <a class="nav-link active text-white float-end" aria-current="page" href="../">Home</a>
                             </li>
-                            <!-- <li class="nav-item">
-                                <a class="nav-link active text-white" aria-current="page" href="#">Résumé</a>
-                            </li> -->
-                            <!-- <li class="dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Projects
-                                </a>
-                                <ul id="projects" class="dropdown-menu dropdown-menu-end dropdown-menu-lg-end" aria-labelledby="navbarDropdown">
-                                    <li><a class="dropdown-item" href="#nightshift">Nightshift at B-Mart</a></li>
-                                    <li><a class="dropdown-item" href="#tr4c">TR4-C</a></li>
-                                    <li><hr class="dropdown-divider"></li>
-                                    <li><a class="dropdown-item" href="#hypernova">Hypernova</a></li>
-                                    <li><a class="dropdown-item" href="#greenhorn">Greenhorn</a></li>
-                                    <li><a class="dropdown-item" href="#liftoff">Liftoff!</a></li>
-                                    <li><hr class="dropdown-divider"></li>
-                                    <li><a class="dropdown-item" href="#mapmaker">Metroidvania Map Widget</a></li>
-                                    <li><a class="dropdown-item" href="#dnd">D&amp;D Character Generator</a></li>
-
-                                </ul>
-                            </li> -->
                             <li class="nav-link">
-                                <a href="https://twitter.com/RyanBlairware?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-size="large" data-dnt="true" data-show-count="false">Follow @RyanBlairware</a>
+                                <a href="https://twitter.com/RyanBlairware?ref_src=twsrc%5Etfw" class="twitter-follow-button float-end" data-size="large" data-dnt="true" data-show-count="false">Follow @RyanBlairware</a>
                             </li>
                         </ul>
                     </div>
@@ -75,49 +58,54 @@
                     <p><i>Nightshift at B-Mart</i> was a  group project completed for my Year 2 Vertical Slice module. I designed and programmed the game alongside a teammate, and managed Github source control for our team of 12; six Games Design students, five Animation students, and a Sound Design student.</p>
                     <p>Initially conceived as a <i>Papers, Please</i>-like puzzle sim, we quickly iterated on our idea to create <i>Nightshift at B-Mart</i>, an eerie shop management sim for Oculus Quest 2.</p>
                     <br>
-                    <image src="../images/001.png"></image>
+                    <p><i>Video coming soon...</i></p>
                     <br>
-                    <br>
-                    <br>
-                    <div class="accordion accordion-flush" id="accordionExample">
+                    <div class="accordion" id="accordionExample">
                         <div class="accordion-item">
-                          <h2 class="accordion-header" id="headingOne">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                              Behaviour trees
-                            </button>
-                          </h2>
-                          <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                            <div class="accordion-body text-start">
-                                <p><i>N@BM</i> had three NPC types with varying behaviours: typical customers, shoplifters, and a unique fugitive. I explored a few different options for creating their behaviour, including UE5's experimental StateTrees and a custom FSM, but I decided to stick with Behaviour Trees; our various NPCs only have a few distinct states that are typically progessed through linearly, so there was no need for a complex network of states and transitions.</p>
+                            <h2 class="accordion-header" id="headingOne">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                  Behaviour trees
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                <div class="accordion-body text-start">
+                                    <p><i>N@BM</i> had three NPC types with varying behaviours: typical customers, shoplifters, and a unique fugitive. I explored a few different options for creating their behaviour, including UE5's experimental StateTrees and a custom FSM, but I decided to stick with Behaviour Trees; our various NPCs only have a few distinct states that are typically progessed through linearly, so there was no need for a complex network of states and transitions.</p>
+                                </div>
                             </div>
-                          </div>
                         </div>
                         <div class="accordion-item">
-                          <h2 class="accordion-header" id="headingTwo">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                              CCTV system
-                            </button>
-                          </h2>
-                          <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-                            <div class="accordion-body text-start">
-                                <p>As the player is confined to their checkout counter, we devised a CCTV system mechanic to let the player monitor other areas of the store, taking some inspiration from <i>Five Nights at Freddy's</i>.</p>
-                                
+                            <h2 class="accordion-header" id="headingTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                  CCTV system
+                                </button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                                <div class="accordion-body text-start">
+                                    <p>As the player is confined to their checkout counter, we devised a CCTV system mechanic to let the player monitor other areas of the store, taking some inspiration from <i>Five Nights at Freddy's</i>.</p>
+                                    <img src="../images/crts1x.png" class="mx-auto d-block mb-2">
+                                    <p>Our level designers reckoned we'd need a maximum of six cameras, so I created six Render Targets, a parent Monitor material that could display a Render Target with some additional effects, and six child Monitor materials, one for each Render Target. These Monitor materials were then mapped onto some placeholder CRT meshes, the number of which could be adjusted at build time.</p>
+                                    <img src="../images/crts1x.png" class="mx-auto d-block mb-2">
+                                    <p>With this setup, our level designers could decide the number of cameras that should be available per level, set the number of monitors accordingly, then place Scene Captures to render to the necessary Render Targets.</p>
+                              </div>
                             </div>
-                          </div>
                         </div>
                         <div class="accordion-item">
-                          <h2 class="accordion-header" id="headingThree">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                              Random generation & Wanted poster
-                            </button>
-                          </h2>
-                          <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-                            <div class="accordion-body text-start">
-
+                            <h2 class="accordion-header" id="headingThree">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                  Random generation & Wanted poster
+                                </button>
+                            </h2>
+                            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                                <div class="accordion-body text-start">
+                                    <p>To increase the variety of NPC designs roaming the shop without overstretching our Art & Animation team, I collaborated closely with them to make modular body features that could be randomly combined.</p>
+                                    animation
+                                    <p>With 3 skin tones, 3 nose shapes, 4 hairstyles, 4 facial feature options and 4 facial hair options, we have 576 possible NPCs - plenty for a proof of concept. With this system in place, I was then able to work on our fugitive & wanted poster mechanics.</p>
+                                    wanted poster
+                                    <p>The night's fugitive is generated and the wanted poster is updated with their new mugshot at the start of a night. This is done with a fairly simple Render Target setup that captures the mugshot once at the start of the night.</p>
+                                </div>
                             </div>
-                          </div>
                         </div>
-                      </div>
+                    </div>
                 </div>
             </div>
             <footer style="height: 6rem"></footer>

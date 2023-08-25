@@ -26,7 +26,7 @@
 
     <body class="page">
         <header style="height: 6rem">
-            <nav id="topbanner" class="navbar navbar-expand-md fixed-top">
+            <nav id="topbanner" class="navbar navbar-dark navbar-expand-md">
                 <div class="container">
                     <a class="navbar-brand" href="./">
                         <div class="d-flex flex-column">
@@ -34,10 +34,13 @@
                             <p class="text-center text-white fw-light" style="height: 1rem">Ryan Blair | Programmer</p>
                         </div>
                     </a>
-                    <div class="navbar-expand" id="navbarSupportedContent">
-                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarBlairware" aria-controls="navbarBlairware" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon navbar-toggler-icon-light"></span>
+                    </button>                  
+                    <div class="collapse navbar-collapse" id="navbarBlairware">
+                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 float-end">
                             <li class="nav-item">
-                                <a class="nav-link active text-white" aria-current="page" href="#">Home</a>
+                                <a class="nav-link active text-white text-end" aria-current="page" href="#">Home</a>
                             </li>
                             <!-- <li class="nav-item">
                                 <a class="nav-link active text-white" aria-current="page" href="#">Résumé</a>
@@ -60,7 +63,7 @@
                                 </ul>
                             </li> -->
                             <li class="nav-link">
-                                <a href="https://twitter.com/RyanBlairware?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-size="large" data-dnt="true" data-show-count="false">Follow @RyanBlairware</a>
+                                <a href="https://twitter.com/RyanBlairware?ref_src=twsrc%5Etfw" class="twitter-follow-button text-end" data-size="large" data-dnt="true" data-show-count="false">Follow @RyanBlairware</a>
                             </li>
                         </ul>
                     </div>
@@ -78,7 +81,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col py-3">
-                        <div class="card shadow mx-auto" style="width: 27rem" id="nightshift">
+                        <div class="card shadow mx-auto" style="max-width: 27rem" id="nightshift">
                             <a href="./projects/nightshift" class="image-with-text">
                                 <div>
                                     <img src="images/nightshift_at_bmart.png" class="card-img-top zoom-on-hover">
@@ -104,7 +107,7 @@
                         </div>
                     </div>
                     <div class="col py-3">
-                        <div class="card shadow mx-auto" style="width: 27rem" id="tr4c">
+                        <div class="card shadow mx-auto" style="max-width: 27rem" id="tr4c">
                             <a href="./projects/tr4c" class="image-with-text">
                                 <div>
                                     <img src="images/tr4-c.png" class="card-img-top zoom-on-hover">
@@ -210,7 +213,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col py-3">
-                        <div class="card shadow mx-auto" style="width: 25rem" id="mapmaker">
+                        <div class="card shadow mx-auto" style="max-width: 25rem" id="mapmaker">
                             <a href="./projects/mapmaker" class="image-with-text">
                                 <img src="images/map_editor.png" class="card-img-top zoom-on-hover">
                             </a>
@@ -234,9 +237,9 @@
                         </div>
                     </div>
                     <div class="col py-3">
-                        <div class="card shadow mx-auto" style="width: 25rem" id="dnd">
+                        <div class="card shadow mx-auto" style="max-width: 25rem" id="dnd">
                             <a href="./projects/dnd" class="image-with-text">
-                                <img src="images/001.png" class="card-img-top zoom-on-hover">
+                                <img src="images/dnd.png" class="card-img-top zoom-on-hover">
                             </a>
                             <div class="card-body">
                                 <h5>D&amp;D Character Generator</h5>
