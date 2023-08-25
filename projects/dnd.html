@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta name="viewport" content="initial-scale=1.0, user-scalable=no"> <!--'borrowed' from https://seblague.github.io/ideagenerator/--->
+        <meta name="viewport" content="initial-scale=1.0, user-scalable=no"> <!-- borrowed from https://seblague.github.io/ideagenerator/--->
 		<title>Blairware | Character Randomiser</title>
-        <script src="/scripts/randomiser.js"></script>
+        <script src="../scripts/randomiser.js"></script>
 		<link rel="stylesheet" href="../css/home.css">
-        <link rel="stylesheet" href="../stylesheet.css">
+        <link rel="stylesheet" href="../css/stylesheet.css">
         
         <!-- Bootstrap 5 -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
@@ -50,12 +50,12 @@
             </nav>
         </header>
 
-		<main>
-			<a href="/" class="intro">Home</a>
-			<p class="intro">This is a D&amp;D character idea generator. Every race, class and background accessible on <a href="http://dnd5e.wikidot.com">dnd5e.wikidot.com</a> has a chance to be generated. Clicking on one of these attributes will open that attribute's wikidot page in a new tab.</p>
-			
-			<button class="generate" onclick="randomise()">Generate Character</button>
-			
+		<main class="container">
+			<div class="px-4 my-3 text-center">
+                <h1 class="display-3 fw-bold">D&amp;D Character Idea Generator</h1>
+                <div class="col-lg-8 mx-auto">
+                    <p class="intro">Every race, class and background accessible on <a href="http://dnd5e.wikidot.com">dnd5e.wikidot.com</a> has a chance to be generated. Clicking on one of these attributes will open that attribute's wikidot page in a new tab.</p>
+                </div> 
 			<div>
 				<p class="generated">
 					<span id="Alignment" 	class="spanA"></span>
@@ -63,9 +63,9 @@
 					<a id="hFirstClass" 	class="spanC"	href='#'	target="_blank"></a>
 					<a id="hSecondClass"	class="spanC"	href='#'	target="_blank"></a>
 					<a id="hBackground" 	class="spanB"	href='#'	target="_blank"></a>
-					
 				</p>
 			</div>
+            <button class="generate" onclick="randomise()">Generate Character</button>
 			<footer style="height: 6rem"></footer>
     	</main>
 	</body>
