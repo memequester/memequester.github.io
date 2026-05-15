@@ -32,9 +32,10 @@ I didn't quite achieve my goal of having the ship traverse walls and ceilings, a
 I did set up the Quest 2 to use for VR scouting, but we found little use for it over our very brief time with the project. Personally, while I appreciated the idea, I had no issue simply flying a Cine Camera around for the same results.
 
 ### In the Lab
-The VP Lab sadly did not live up to the years-long hype. The LED walls were great, but the computer driving the screens was running only one of its two GPUs, and the networked setup was very laggy, making it annoying to make changes when collaborating with teammates that were in the scene or behind the camera. The biggest issue was that the entire lab just wouldn't work sometimes, so our group only got one session to gather shots. The only shot we had with any built environment was one of my own, which we edited on the spot to get a few other test shots. 
+The VP Lab sadly did not live up to the years-long hype. The LED walls were great, but the computer driving the screens was running only one of its two GPUs, and the networked setup was very laggy, making it annoying to make changes when collaborating with teammates that were in the scene or behind the camera. The biggest issue was that the entire lab just wouldn't work sometimes, so our group only got one session to gather shots. The only shots we had with any built environment was one of my own, which we improvised with to get a few other test shots. Given the VP Lab situation, we decided early on that VP wouldn't be the project we'd take forward.
 
-The 
+### Putting It Together
+While I was focused on AR, Matt brought Conall's early engine shots up to the standard of the camera shots, then rendered them out and put them together with the camera shots to make our demo film. I was super impressed with the result, and in hindsight I'd actually have really liked taking VP forward, as I had more that I wanted to contribute to it.
 
 ## Augmented Reality
 <img src="/img/augmentedrealitybanner.jpg" class="banner"/>
@@ -53,9 +54,14 @@ Work slowed on the project as our team collectively decided that this project wo
 ### Some Silly Tech Art 
 I spent a perhaps unreasonable amount of time making animated bubble effects for the logo and UI of the game. My approach here was similar to previous work I did rendering rain droplets in Unreal and Blender, but I used my newfound knowledge of the free software Material Maker to generate the required textures. I generated a texture of randomly distributed circles with random grey values, as well as normalmaps of spheres with the same random distribution, then threshold the grey circles texture with a vertical gradient. This makes the circles pop in at a vertical location corresponding to their grey value, where darker circles appear first, and lighter circles only appear higher up. I could then scroll this texture along the gradient to make the bubbles move upwards, with new bubbles popping in as it scrolls. I was happy with this initially, but when it came time to demonstrate the game in week three, I found out that the bubbles were barely visible on my device and on the projector. And then, fittingly, the game did not work at all -- a huge regression from the much better state that it was in on week two.
 
+### Back to Development
+In fixing the issues that derailed our week three demo, I realised that the structural changes I'd made on top of the provided AR framework were just plain bad. I did a significant rewrite on what I had, consolidating a lot of the code into the player pawn class - usually I avoid this kind of monolithic structure, but in this case it made sense and was easier to debug. Additionally, all of the work that I'd left for myself to do later needed done now, which was not a particularly wise move by my past self. I scrambled to program everything that still needed done, but between hand-ins for other modules, being bogged down in UI work and laptop troubles that prevented me from even opening Unreal, I lost a lot of time and ended up very behind on my goals. I'm not particularly proud of the final AR product: I didn't leave myself enough time to implement the more unique mechanics that my team had brainstormed, so the resultant game was bland.
+
 ## Brain-Computer Interfaces
 <img src="/img/BCIbanner.jpg" class="banner"/>
 The last contemporary tech project was on brain-computer interfaces. I was immediately intimidated by this project due to its complexity, and I'll admit I was quite reluctant to wear the electrode caps as they required using a conducting gel that I didn't want in my hair.
 
 ### Ideation
-The very long introductory lecture made it clear that the actual brain-controlled element(s) of our games would need to be very simple actions, like turning your head, blinking, or imagining 
+The very long introductory lecture made it clear that the actual brain-controlled element(s) of our games would need to be very simple actions, like blinking or turning/tilting left or right. We were also shown examples of other games incorporating BCI controls, one of which was a traditional keyboard & mouse first-person game, but with a mechanic that required the player to pause and focus to perform an action using BCI. Our game would later follow this same design pattern.
+
+We settled on the rather silly concept of spoon-bending, which I thought fit well into the restrictions we had: most of the gameplay would use keyboard & mouse, but the player would pause and focus to imagine a crushing action (or more concretely, iamgine balling up their hand into a fist). I consulted with Sarshar early to clear our idea and confirm that the BCI headsets we had access to would work for this idea. 
