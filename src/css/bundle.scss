@@ -1,0 +1,64 @@
+* {
+    font-family: "Manrope", serif;
+    font-optical-sizing: auto;
+    font-weight: 350;
+    line-height: 1.75rem;
+}
+
+code {
+    font-family: 'Google Sans Code', 'Courier New', Courier, monospace;
+    padding-inline-start: 0.2rem;
+    padding-inline-end: 0.2rem;
+    font-weight: 450;
+}
+
+h1 {
+    font-weight: 600;
+}
+
+h2 {
+    font-weight: 600;
+}
+
+h3 {
+    font-weight: 500;
+}
+
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    padding: 0 20rem;
+}
+
+.topnav {
+    display: block;
+    background: rgb(41, 35, 57);
+    padding: 1rem 0 1rem 12.5rem;
+
+    a {
+        text-decoration: none;
+        color: white;
+
+        p {
+            margin: 0;
+            align-self: center;
+        }
+    }
+}
+
+.logo-subtitle {
+    font-weight: 300;
+}
+
+.badge {
+    display: inline-block;
+    padding: 0.35em 0.65em;
+    border-radius: 0.375rem;
+    font-size: 0.75em;
+    font-weight: 700;
+    color: #fff;
+}

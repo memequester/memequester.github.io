@@ -1,0 +1,24 @@
+{
+  "name": "eleventy",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "type": "module",
+  "dependencies": {
+    "@11ty/eleventy": "^3.1.2",
+    "@11ty/eleventy-img": "^6.0.4",
+    "@11ty/eleventy-plugin-webc": "^0.11.2",
+    "clean-css": "^5.3.3",
+    "html-minifier-terser": "^7.2.0",
+    "sass": "^1.89.2"
+  },
+  "devDependencies": {
+    "prettier": "3.8.3"
+  }
+}

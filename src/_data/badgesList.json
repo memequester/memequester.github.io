@@ -1,0 +1,17 @@
+{
+    "unreal": "Unreal 5",
+    "godot": "Godot",
+    "cpp": "C++",
+    "blueprints": "Blueprints",
+    "ink": "Ink",
+    "umg": "UMG",
+    "gdscript": "GDScript",
+    "pixelover": "PixelOver",
+    "maya": "Autodesk Maya",
+    "blockbench": "Blockbench",
+    "python": "Python",
+    "blender": "Blender",
+    "meshlab": "MeshLab",
+    "svg": "SVGlib",
+    "inkscape": "Inkscape"
+}

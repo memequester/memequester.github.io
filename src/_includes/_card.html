@@ -1,0 +1,13 @@
+<div class="card">
+    <a href="{{ project.url }}"><img src="{{ project.data.imgurl }}" alt="" loading="lazy" decoding="async"></a>
+    <div class="card-container">
+        <div class="badges">
+            <p>
+                {% for badge in project.data.badges %}
+                <span class="badge {{ badge }}">{{ badgesList[badge] }}</span>
+                {% endfor %}
+            </p>
+        </div>
+        <p>{{ project.data.summary }}</p>
+    </div>
+</div>
