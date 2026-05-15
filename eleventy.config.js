@@ -7,7 +7,7 @@ import htmlmin from "html-minifier-terser";
 
 export default function(eleventyConfig) {
   eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
-    formats: ["svg", "avif", "webp", "jpeg"],
+    formats: ["avif", "webp", "jpeg"],
 
 		// output image widths
 		widths: ["auto"],
