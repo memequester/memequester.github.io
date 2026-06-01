@@ -18,11 +18,32 @@ I spent a truly unreasonable amount of time on the glass material and, by extens
 
 It's a shame too, because Alpha to Coverage solved my problem with broken glass, namely the rendering of many shards of glass. The deferred pipeline just couldn't handle this nicely: shards would constantly Z-fight and render in the wrong order, no matter what settings I used. Alpha to Coverage solved this problem by effectively rendering a checkerboard of translucency and then using MSAA to blur the checkerboard into a kind of fake translucency, which had no issues with sorting. It did have downsides: surfaces could only be 25%, 50% or 75% translucent, and these translucencies would not add together, i.e. two 50% translucency shards on top of each other did not make a 25% translucent surface, so the shards always looked flat. I didn't mind this for my use case, but I couldn't use it anyway, so whatever. I'll get to use the Deferred Renderer for realsies one day.
 
-### Making the level
+Finally, I put together some C++ to handle render targets for the screens. Or... I tried to. To try and minimise memory usage, I envisioned a system where a pool of render targets would be managed and dynamically assigned to screens when they became visible. But why stop there? What if there were pools of render targets at a variety of resolutions, e.g. full-res, half-res, quarter-res, and then the manager could assign render targets based on the relative size of the screens too? That would let me have *loads* of them! But I couldn't get this to work nicely, so I ended up sticking to a simple system that created render targets when they were needed.
+
+## The Mistake
+So, with my mechanics created (even though I wanted several other things, like the platform-making Gloo Gun, perhaps some enemies, etc., so I wasn't really done), I set about making the level. Step one: find assets. Yes, that's step one, what else would I do first?
+
+I thought I was in luck fairly early, as I found a kind of 'Space Museum' asset pack with lots of wood-on-brass-on-steel, echoing the 'Neo Deco' of *Prey*. But I found it limited and I worried what it would be like to work with; it appeared to just be some other team's Unreal project zipped up, meaning it was disorganised and definitely dodgy for me to be using. 
+
+So, I thought...
+
+<blockquote>"Why don't I just use the real assets from *Prey*"?</blockquote>
+
+### Ripping from Prey
+I made progress on getting assets out of *Prey* fairly quickly. Tools already existed for extracting assets from CryEngine games; one I relied on from the very beginning of the project to the very end was Markemp's cgf-converter, a program originally designed for extracting mechs from MechWarrior Online. 
+
+However I quickly ran into a rather large problem which -- spoilers -- would not be properly solved for a number of weeks. So: Unreal uses the metallic-roughness PBR workflow, where a greyscale (usually 1-bit, i.e. black or white, with no shades of grey) metallic/metalness texture controls whether or not a material is rendered as a metal, and a greyscale roughness texture controls to what extent light is scattered rather than perfectly reflected. Assumptions are made about the materials being rendered in order to save texture space: materials are assumed to either be metal *or* non-metal ("dielectric"), hence the 1-bit metallic texture where 0 is dielectric and 1 is metal; dielectrics are restricted to a narrow range of specularity, usually between 2% and 8%, defaulting to 4% in Unreal; and the colour of the specular highlight is controlled only by the colour of the light. These assumptions mean that while metal-rough requires less data, it's also less accurate.
+
+CryEngine uses specular-glossiness. In this workflow, the colour of the specular highlight is stored in a colour texture, meaning 
+
+## Making the level...?
+Ideation is something I struggle a lot with. Despite my many bad experiences with teams, I still prefer to work in them because I can be a problem-solver and I can occasionally "yes, and" other teammates' ideas. I thought I'd gotten a bit better at ideation over the past few years, but any positive progress I've made on this has surely been undone by this level design project.
+
+I must have driven my friends absolutely insane, sitting on call in December and the first two weeks of January, desperately trying to make my brain have one (1) idea. Just one. We did an online whiteboard where I tried to sketch out room plans and nail down a sequence, I streamed myself working on the level
 
 
 ## What the hell happened???
-<blockquote>"I can't find assets I like, so why don't I just use the real assets from *Prey*"?</blockquote>
+
 
 
 
