@@ -27,7 +27,7 @@ I thought I was in luck fairly early, as I found a kind of 'Space Museum' asset 
 
 So, I thought...
 
-<blockquote>"Why don't I just use the real assets from *Prey*"?</blockquote>
+<blockquote>"Why don't I just use the real assets from <i>Prey</i>?"</blockquote>
 
 ### Ripping from Prey
 I made progress on getting assets out of *Prey* fairly quickly. Tools already existed for extracting assets from CryEngine games; one I relied on from the very beginning of the project to the very end was Markemp's cgf-converter, a program originally designed for extracting mechs from MechWarrior Online. 
