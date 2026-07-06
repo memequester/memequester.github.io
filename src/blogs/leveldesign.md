@@ -30,20 +30,37 @@ So, I thought...
 <blockquote>"Why don't I just use the real assets from <i>Prey</i>?"</blockquote>
 
 ### Ripping from Prey
-I made progress on getting assets out of *Prey* fairly quickly. Tools already existed for extracting assets from CryEngine games; one I relied on from the very beginning of the project to the very end was Markemp's cgf-converter, a program originally designed for extracting mechs from MechWarrior Online. 
+I made progress on getting assets out of *Prey* fairly quickly. Tools already existed for extracting assets from CryEngine games; one I relied on from the very beginning of the project to the very end was Markemp's cgf-converter, a program originally designed for extracting mechs from MechWarrior Online. For now, I stuck to its default settings, meaning it output COLLADA files which Blender handled fine.
 
-However I quickly ran into a rather large problem which -- spoilers -- would not be properly solved for a number of weeks. So: Unreal uses the metallic-roughness PBR workflow, where a greyscale (usually 1-bit, i.e. black or white, with no shades of grey) metallic/metalness texture controls whether or not a material is rendered as a metal, and a greyscale roughness texture controls to what extent light is scattered rather than perfectly reflected. Assumptions are made about the materials being rendered in order to save texture space: materials are assumed to either be metal *or* non-metal ("dielectric"), hence the 1-bit metallic texture where 0 is dielectric and 1 is metal; dielectrics are restricted to a narrow range of specularity, usually between 2% and 8%, defaulting to 4% in Unreal; and the colour of the specular highlight is controlled only by the colour of the light. These assumptions mean that while metal-rough requires less data, it's also less accurate.
+However I quickly ran into a rather large problem: Unreal uses the metallic-roughness PBR workflow, whereas CryEngine uses specular-glossiness. At first I tried to convert what I had to work in Unreal's metal-rough system, using a Python script to write a new metallic texture using the specular colour texture and some maths that I found in Unreal's own SpecGlossToMetalRoughness node that it uses when importing spec-gloss assets. I ran this script within Blender so that it could also handle reexporting the files to glTF files, which meant it took *forever* to process the thousands of files that I had extracted from Prey.
 
-CryEngine uses specular-glossiness. In this workflow, the colour of the specular highlight is stored in a colour texture, meaning 
+The thing is, this PBR pipeline swap would only work if the materials were truly physically-based, and here, they were not. I was getting awful looking materials out of the process. Transitions between metal and dielectric surfaces became harsh and noisy, and semi-reflective surfaces like paint and rust were rendered completely and utterly wrong. I would eventually find a solution to this problem, but not here and now.
+
+I was also having trouble with skeletal mesh assets. This was partly due to the tools I was using, and also my understanding of how to use them. Yet again I would not solve this issue for a long time...
+
+I spent days agonising over the assets I had ripped rather than thinking about my level. I became obsessed, and that obsession would not go away until finishing the project. 
 
 ## Making the level...?
-Ideation is something I struggle a lot with. Despite my many bad experiences with teams, I still prefer to work in them because I can be a problem-solver and I can occasionally "yes, and" other teammates' ideas. I thought I'd gotten a bit better at ideation over the past few years, but any positive progress I've made on this has surely been undone by this level design project.
+I justified the weeks I spent ripping assets by thinking that, while I worked to solve these problems, I'd subconsciously have ideas about what I should do with the level.
 
-I must have driven my friends absolutely insane, sitting on call in December and the first two weeks of January, desperately trying to make my brain have one (1) idea. Just one. We did an online whiteboard where I tried to sketch out room plans and nail down a sequence, I streamed myself working on the level
+This did not happen.
 
+I must have driven my friends absolutely insane, sitting on call in December and the first two weeks of January, desperately trying to make my brain have one (1) idea. Just one. We did an online whiteboard where I tried to sketch out room plans and nail down a sequence, I streamed myself working on the level, I played chunks of *Prey* as inspiration, and yet I got absolutely nowhere. 
 
-## What the hell happened???
+I downed tools to work on a submission for my other module, which I absolutely *botched* and was very disappointed in as I struggled to find a direction to go in there too. 
 
+Back to level design, I asked for an extension, and still, I had nothing. I sat for hours in front of my computer every day trying to make any sort of progress so that I would have *something* to hand in.
 
+And so the deadline came and went.
+
+## Limbo
+The damage had now been done. Whatever I handed in would now be capped to 50%. In the intervening months I had to dedicate more time to the current semester's two modules, so I made little progress on the level. At this point I was absolutely dreading the prospect of working on it again -- I *still* had no ideas. No core concept. I had truly never struggled with a project like this in my life. I tried to clear it out of my mind for the rest of January so I could be rested for working on the other modules (which proved to be gruelling in their own way).
+
+## Bits and Pieces
+Between working on current modules, I did make some progress on my pipelines. I discovered that Unreal's new material pipeline Substrate is a specular-glossiness pipeline, allowing me to use assets from *Prey* unaltered. This massively streamlined the process of preparing and importing assets -- deleting the badly-converted metal-roughness textures felt so good. 
+
+I worked to create an Interchange pipeline that would handle swapping over imported assets' materials to use my new Substrate master materials, but the documentation was almost non-existent. I consulted the Unreal Source Discord server and eventually ended up talking directly to a staff member at Epic Games, who helped me get around problems I was having due to the Interchange plugin still being a work-in-progress. With this sorted out, I was able to import swathes of assets at once, with Interchange correctly creating materials -- though this was not without issue.
+
+In March, a new major version of cgf-converter was released. It could now generate USD files and also supported importing and converting animation files, which was excellent news. I used this new version to convert all the files for the Phantom enemy, which allowed me to use it for sequences in my level. 
 
 
