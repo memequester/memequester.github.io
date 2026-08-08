@@ -61,6 +61,14 @@ Between working on current modules, I did make some progress on my pipelines. I 
 
 I worked to create an Interchange pipeline that would handle swapping over imported assets' materials to use my new Substrate master materials, but the documentation was almost non-existent. I consulted the Unreal Source Discord server and eventually ended up talking directly to a staff member at Epic Games, who helped me get around problems I was having due to the Interchange plugin still being a work-in-progress. With this sorted out, I was able to import swathes of assets at once, with Interchange correctly creating materials -- though this was not without issue.
 
-In March, a new major version of cgf-converter was released. It could now generate USD files and also supported importing and converting animation files, which was excellent news. I used this new version to convert all the files for the Phantom enemy, which allowed me to use it for sequences in my level. 
+In March, a new major version of cgf-converter was released. It could now generate USD files and also supported importing and converting animation files, which was excellent news. I used this new version to convert all the files for the Phantom enemy, which allowed me to use it for sequences in my level. Naturally I tested this as soon as I could.
+
+(phantom render gif/video)
+
+## Epiphany
+
+Having now built up a catalogue of assets and a set of tools for importing more quickly, I was back to needing an idea. Yes, that's right, this whole time I'd still been stuck on what I was actually going to do. Previously the only idea I'd had was that the player should wake up in a medical bay with a Phantom standing over them, before it teleports out of the bay, then out of the room behind a window, and then away entirely. This Phantom would lure the player... somewhere. Perhaps they are lured to a Looking Glass where a twist ending inspired by *Prey* itself would play out: the player is revealed to be a Phantom themselves. But I really had no idea how to connect this beginning area and the ending area, and without that, I just could not start. 
+
+And then it happened. While I was testing some refinements to my asset pipeline, searching for things to import and test, I found the assets for the quarantine chamber 
 
 
