@@ -2,10 +2,21 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches: ["master"]
+    paths-ignore:
+      - "README.md"
+      - ".gitignore"
+      - "LICENSE"
+
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
 permissions:
   contents: read
   pages: write
   id-token: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -14,7 +25,14 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-      - run: npm install
+          cache: 'npm'
+      - uses: actions/cache@v4
+        with:
+          path: .cache
+          key: ${{ runner.os }}-11ty-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-11ty
+      - run: npm ci
       - run: npx @11ty/eleventy
       - uses: actions/upload-pages-artifact@v3
         with:
