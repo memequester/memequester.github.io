@@ -4,7 +4,7 @@ main {
 
 .hey {
     font-weight: 900;
-    font-size: xxx-large;
+    font-size: clamp(2rem, 5vw, 3.75rem); 
 }
 
 .project-container {
@@ -14,31 +14,29 @@ main {
     gap: 20px 30px;
 }
 
-@media screen and (max-width:1024px) {
+@media screen and (max-width:768px) {
     .project-container {
         grid-template-columns: repeat(1,1fr);
     }
 }
 
 .card {
-  /* Add shadows to create the "card" effect */
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.2s;
-  border-radius: 5px; /* 5px rounded corners */
+  border-radius: 5px;
+  width: 100%;
 
   img {
     width: 100%;
-    height: 100%;
+    height: auto;
     border-radius: 5px 5px 0 0;
   }
 }
 
-/* On mouse-over, add a deeper shadow */
 .card:hover {
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
 
-/* Add some padding inside the card container */
 .card-container {
   padding: 2px 16px;
 }

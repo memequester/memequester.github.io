@@ -10,12 +10,12 @@ Our first contemporary technology was Virtual Production, meaning we finally got
 ### Ideation
 From what I learned in our first class (and from prior knowledge about virtual production), I knew that I wanted to take advantage of the available brightness of the screens. I pictured a set of high-contrast scenes in a nighttime city, where street lights and signage would brightly illuminate whichever team members were burdened with being in front of the camera (luckily, not me). I also saw how the camera tracking in the VP Lab lagged slightly, making fast tracking shots difficult, so I imagined using mostly slow tracking shots and static shots, and leaving any fast tracking shots to be rendered rather than done in-camera. Given these constraints, I envisioned various shots of a driver in a car, cruising past lights that would shine off the screen, with mounted shots rendered in-engine.
 
-<div style="display: flex; margin: 0 -8rem 4rem">
-    <figure style="flex: auto">
+<div class="side-by-side">
+    <figure>
         <img src="/img/wipeout.png" class="twofig"/>
         <figcaption>The 'money shot' from the <i>WipEout</i> cinematic storyboard</figcaption>
     </figure>
-    <figure style="flex: auto">
+    <figure>
         <img src="/img/redline.png" class="twofig"/>
         <figcaption>Interior shot of JP listening to the race commentary just before boosting ahead</figcaption>
     </figure>
