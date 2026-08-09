@@ -61,14 +61,20 @@ Between working on current modules, I did make some progress on my pipelines. I 
 
 I worked to create an Interchange pipeline that would handle swapping over imported assets' materials to use my new Substrate master materials, but the documentation was almost non-existent. I consulted the Unreal Source Discord server and eventually ended up talking directly to a staff member at Epic Games, who helped me get around problems I was having due to the Interchange plugin still being a work-in-progress. With this sorted out, I was able to import swathes of assets at once, with Interchange correctly creating materials -- though this was not without issue.
 
-In March, a new major version of cgf-converter was released. It could now generate USD files and also supported importing and converting animation files, which was excellent news. I used this new version to convert all the files for the Phantom enemy, which allowed me to use it for sequences in my level. Naturally I tested this as soon as I could.
+In March, a new major version of cgf-converter was released. It could now generate USD files and also supported importing and converting animation files, which was excellent news. I used this new version to convert all the files for the Phantom enemy, which allowed me to use it for sequences in my level.
 
-(phantom render gif/video)
+<img src="../img/phantom.webp" alt="Phantom animation" eleventy:ignore>
+
+It also let me easily convert and import the animations for things like doors, which was very satisfying to see working. Despite this whole asset process being ultimately unnecessary and not exactly conducive to greyboxing my level, I feel like I did learn a ton about rendering, asset pipelines, tooling, and the extent of my ability to procrastinate.
 
 ## Epiphany
 
 Having now built up a catalogue of assets and a set of tools for importing more quickly, I was back to needing an idea. Yes, that's right, this whole time I'd still been stuck on what I was actually going to do. Previously the only idea I'd had was that the player should wake up in a medical bay with a Phantom standing over them, before it teleports out of the bay, then out of the room behind a window, and then away entirely. This Phantom would lure the player... somewhere. Perhaps they are lured to a Looking Glass where a twist ending inspired by *Prey* itself would play out: the player is revealed to be a Phantom themselves. But I really had no idea how to connect this beginning area and the ending area, and without that, I just could not start. 
 
-And then it happened. While I was testing some refinements to my asset pipeline, searching for things to import and test, I found the assets for the quarantine chamber 
+And then it happened. While I was testing some refinements to my asset pipeline, searching for things to import and test, I found the assets for the quarantine chamber, and the idea finally occurred to me. This chamber appears in the Trauma Center in Talos 1's atrium, where scientist Trevor Young (patient zero of the whole Typhon outbreak aboard the station) is isolated. Maybe my level could be about a quarantined patient, who would be left alone by the Typhon (thus excusing the lack of combat and enemy AI). 
 
+In hindsight this is both obvious and pretty flimsy, and as I added rooms to the level, the lack of any real elaboration on this idea became clear. But what mattered is that it got me properly started, so that I could be finished with the project.
 
+## Getting It Done
+
+Having spent all of my time before now working on (wholly unnecessary) pipeline stuff, the rest of the story is mostly pretty boring. Using the standardised level geometry from *Prey*, I could easily block out rooms with wall pieces, slap materials on them, and add props. 

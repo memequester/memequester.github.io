@@ -24,10 +24,11 @@ export default function(eleventyConfig) {
       fallback: "largest",
     }
   });
-  //eleventyConfig.addPassthroughCopy("src/css");
+  
   eleventyConfig.addPassthroughCopy("src/scripts");
-  eleventyConfig.addPassthroughCopy("src/img");
   eleventyConfig.addPassthroughCopy("src/CNAME");
+
+  eleventyConfig.addPassthroughCopy("src/img/phantom.webp");
 
   eleventyConfig.addShortcode(
     "accordion",
@@ -56,21 +57,21 @@ export default function(eleventyConfig) {
 		},
 	});
 
-  eleventyConfig.addTransform("prettier", function (content) {
-    if ((this.page.outputPath || "").endsWith(".html")) {
+  // eleventyConfig.addTransform("prettier", function (content) {
+  //   if ((this.page.outputPath || "").endsWith(".html")) {
 
-        let prettified = prettier.format(content, {
-            bracketSameLine: true,
-            printWidth: 160,
-            parser: "html",
-            tabWidth: 2
-        });
-        return prettified;
-    }
+  //       let prettified = prettier.format(content, {
+  //           bracketSameLine: true,
+  //           printWidth: 160,
+  //           parser: "html",
+  //           tabWidth: 2
+  //       });
+  //       return prettified;
+  //   }
 
-    // If not an HTML output, return content as-is
-    return content;
-  });
+  //   // If not an HTML output, return content as-is
+  //   return content;
+  // });
 
   eleventyConfig.addTransform("htmlmin", function (content) {
 		// String conversion to handle `permalink: false`
