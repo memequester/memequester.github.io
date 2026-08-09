@@ -63,7 +63,7 @@ I worked to create an Interchange pipeline that would handle swapping over impor
 
 In March, a new major version of cgf-converter was released. It could now generate USD files and also supported importing and converting animation files, which was excellent news. I used this new version to convert all the files for the Phantom enemy, which allowed me to use it for sequences in my level.
 
-<img src="../img/phantom.webp" alt="Phantom animation" eleventy:ignore>
+<img src="/img/static/phantom.webp" alt="Phantom animation" eleventy:ignore>
 
 It also let me easily convert and import the animations for things like doors, which was very satisfying to see working. Despite this whole asset process being ultimately unnecessary and not exactly conducive to greyboxing my level, I feel like I did learn a ton about rendering, asset pipelines, tooling, and the extent of my ability to procrastinate.
 

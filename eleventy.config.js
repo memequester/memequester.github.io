@@ -28,7 +28,7 @@ export default function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/scripts");
   eleventyConfig.addPassthroughCopy("src/CNAME");
 
-  eleventyConfig.addPassthroughCopy("src/img/phantom.webp");
+  eleventyConfig.addPassthroughCopy("src/img/static");
 
   eleventyConfig.addShortcode(
     "accordion",

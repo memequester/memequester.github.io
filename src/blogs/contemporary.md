@@ -4,7 +4,7 @@ title: Contemporary Game Technologies
 # {{ title }} Blog
 
 ## Virtual Production
-<img src="../img/virtualproductionbanner.jpg" class="banner"/>
+<img src="/img/virtualproductionbanner.jpg" class="banner"/>
 Our first contemporary technology was Virtual Production, meaning we finally got to use the fabled VP Lab that I'd been hearing about since my first year on the undergraduate course.
 
 ### Ideation
