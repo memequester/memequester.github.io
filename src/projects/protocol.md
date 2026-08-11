@@ -1,6 +1,6 @@
 ---
 title: Protocol
-summary: "this is a summary of the project"
+summary: "Programming and tech art for a detective narrative adventure"
 imgurl: /img/protocol.jpg
 tags: "university"
 badges: 

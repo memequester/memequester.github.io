@@ -1,6 +1,6 @@
 ---
 title: Uforika Ride To Survive
-summary: "this is a summary of the project"
+summary: "Reworking the physics for an anti-gravity racing MMO"
 imgurl: /img/uforika.png
 tags: "professional"
 badges: 

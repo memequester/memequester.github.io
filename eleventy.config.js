@@ -10,7 +10,7 @@ export default function(eleventyConfig) {
     formats: ["avif", "webp", "jpeg"],
 
 		// output image widths
-		widths: ["auto"],
+		widths: ["400,800,1200"],
 
 		// optional, attributes assigned on <img> nodes override these values
 		htmlOptions: {
@@ -18,6 +18,7 @@ export default function(eleventyConfig) {
         alt : "",
 				loading: "lazy",
 				decoding: "async",
+        sizes: "(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 400px",
 			},
 			pictureAttributes: {},
 
@@ -27,7 +28,6 @@ export default function(eleventyConfig) {
   
   eleventyConfig.addPassthroughCopy("src/scripts");
   eleventyConfig.addPassthroughCopy("src/CNAME");
-
   eleventyConfig.addPassthroughCopy("src/img/static");
 
   eleventyConfig.addShortcode(
@@ -41,14 +41,13 @@ export default function(eleventyConfig) {
 
   eleventyConfig.addTemplateFormats("scss");
 
-	// Creates the extension for use
 	eleventyConfig.addExtension("scss", {
 		outputFileExtension: "css", 
 
 		compile: function (inputContent) {
-
       let result = sass.compileString(inputContent, {
         style: 'compressed',
+        loadPaths: [path.dirname(inputPath), "src"],
       });
 
 			return async (data) => {
@@ -57,37 +56,19 @@ export default function(eleventyConfig) {
 		},
 	});
 
-  // eleventyConfig.addTransform("prettier", function (content) {
-  //   if ((this.page.outputPath || "").endsWith(".html")) {
+  eleventyConfig.addTransform("htmlmin", async function (content) {
+    if ((this.page.outputPath || "").endsWith(".html")) {
+      let minified = await htmlmin.minify(content, {
+        useShortDoctype: true,
+        removeComments: true,
+        collapseWhitespace: true,
+      });
 
-  //       let prettified = prettier.format(content, {
-  //           bracketSameLine: true,
-  //           printWidth: 160,
-  //           parser: "html",
-  //           tabWidth: 2
-  //       });
-  //       return prettified;
-  //   }
+      return minified;
+    }
 
-  //   // If not an HTML output, return content as-is
-  //   return content;
-  // });
-
-  eleventyConfig.addTransform("htmlmin", function (content) {
-		// String conversion to handle `permalink: false`
-		if ((this.page.outputPath || "").endsWith(".html")) {
-			let minified = htmlmin.minify(content, {
-				useShortDoctype: true,
-				removeComments: true,
-				collapseWhitespace: true,
-			});
-
-			return minified;
-		}
-
-		// If not an HTML output, return content as-is
-		return content;
-	});
+    return content;
+  });
 
   return {
     dir: {
