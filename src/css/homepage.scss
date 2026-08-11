@@ -12,6 +12,7 @@ main {
     grid-template-columns: repeat(3, minmax(0, 320px));
     gap: 20px 24px;
     margin-bottom: 2rem;
+    justify-content: center;
 
     &:has(> :first-child:last-child) {
         grid-template-columns: minmax(0, 380px);
