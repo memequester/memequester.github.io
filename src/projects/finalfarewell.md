@@ -9,4 +9,5 @@ badges:
     - blueprints
 ---
 # {{ title }}
-The Final Farewell is a top-down narrative adventure game set in a procedurally generated forest inhabited by ghosts and other things that I am lying about
+
+<iframe src="https://store.steampowered.com/widget/2803140/" frameborder="0" width="646" height="190"></iframe>

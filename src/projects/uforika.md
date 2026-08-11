@@ -8,4 +8,4 @@ badges:
     - blueprints
 ---
 # {{ title }}
-blah blah blah
+Contracting experience (but I got pigeonholed, so)
