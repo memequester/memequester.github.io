@@ -1,5 +1,5 @@
 ---
-title: "Uforika: Ride To Survive"
+title: "Hypernova"
 summary: "Get rid of this one"
 imgurl: /img/hypernova.png
 tags: "jams"

@@ -1,6 +1,6 @@
 ---
 title: Nightshift at B-Mart
-summary: "this is a summary of the project"
+summary: "VR"
 imgurl: /img/nightshift_at_bmart.png
 tags: "university"
 badges: 
@@ -8,4 +8,4 @@ badges:
     - blueprints
 ---
 # {{ title }}
-blah blah blah
+Oooooold and bad

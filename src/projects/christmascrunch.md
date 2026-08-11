@@ -1,6 +1,6 @@
 ---
 title: Christmas Crunch
-summary: "this is a summary of the project"
+summary: "GMTK 2024"
 imgurl: /img/christmascrunch.png
 tags: "jams"
 badges: 
