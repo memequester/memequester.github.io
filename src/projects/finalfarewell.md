@@ -3,6 +3,7 @@ title: Final Farewell
 summary: "A top-down cozy narrative adventure"
 imgurl: /img/finalfarewell.jpg
 tags: "professional"
+order: 1
 badges: 
     - unreal
     - cpp

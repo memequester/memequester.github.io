@@ -3,6 +3,7 @@ title: "Hypernova"
 summary: "Get rid of this one"
 imgurl: /img/hypernova.png
 tags: "jams"
+order: 10
 badges: 
     - godot
     - gdscript

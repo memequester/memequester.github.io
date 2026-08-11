@@ -2,7 +2,7 @@ import * as sass from 'sass';
 import * as path from 'node:path';
 import { eleventyImageTransformPlugin } from "@11ty/eleventy-img";
 
-import * as prettier from 'prettier';
+// import * as prettier from 'prettier';
 import htmlmin from "html-minifier-terser";
 
 export default function(eleventyConfig) {

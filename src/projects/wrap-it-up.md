@@ -3,6 +3,7 @@ title: "Wrap It Up"
 summary: "GMTK 2025"
 imgurl: /img/wrap-it-up.png
 tags: "jams"
+order: 1
 badges: 
     - godot
     - gdscript

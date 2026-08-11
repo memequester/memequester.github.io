@@ -3,6 +3,7 @@ title: "Anybody Want Some Goslings?"
 summary: "GGJ 2024"
 imgurl: /img/goslings.png
 tags: "jams"
+order: 3
 badges: 
     - godot
     - gdscript

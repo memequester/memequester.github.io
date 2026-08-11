@@ -3,6 +3,7 @@ title: Christmas Crunch
 summary: "GMTK 2024"
 imgurl: /img/christmascrunch.png
 tags: "jams"
+order: 9
 badges: 
     - godot
     - gdscript

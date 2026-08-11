@@ -10,28 +10,28 @@ header: header.html
 
 <h2>Professional</h2>
 <div class="project-container" id="{{ collection[0] }}">
-    {%- for project in collections.professional -%}
+    {%- for project in collections.professional | sort: "data.order" -%}
         {% include "_card.html" %}
     {%- endfor -%}
 </div>
 
 <h2>University</h2>
 <div class="project-container" id="{{ collection[0] }}">
-    {%- for project in collections.university -%}
+    {%- for project in collections.university | sort: "data.order" -%}
         {% include "_card.html" %}
     {%- endfor -%}
 </div>
 
 <h2>Game Jams</h2>
 <div class="project-container" id="{{ collection[0] }}">
-    {%- for project in collections.jams -%}
+    {%- for project in collections.jams | sort: "data.order" -%}
         {% include "_card.html" %}
     {%- endfor -%}
 </div>
 
 <h2>Odd Jobs</h2>
 <div class="project-container" id="{{ collection[0] }}">
-    {%- for project in collections.oddjobs -%}
+    {%- for project in collections.oddjobs | sort: "data.order" -%}
         {% include "_card.html" %}
     {%- endfor -%}
 </div>

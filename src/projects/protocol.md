@@ -3,6 +3,7 @@ title: Protocol
 summary: "Programming and tech art for a detective narrative adventure"
 imgurl: /img/protocol.jpg
 tags: "university"
+order: 1
 badges: 
     - unreal
     - cpp
