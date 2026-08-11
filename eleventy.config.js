@@ -6,6 +6,38 @@ import { eleventyImageTransformPlugin } from "@11ty/eleventy-img";
 import htmlmin from "html-minifier-terser";
 
 export default function(eleventyConfig) {
+  eleventyConfig.addCollection("professionalSorted", function(collectionApi) {
+    return collectionApi.getFilteredByTag("professional").sort((a, b) => {
+      const orderA = a.data.order ?? 999;
+      const orderB = b.data.order ?? 999;
+      return orderA - orderB;
+    });
+  });
+
+  eleventyConfig.addCollection("jamsSorted", function(collectionApi) {
+    return collectionApi.getFilteredByTag("jams").sort((a, b) => {
+      const orderA = a.data.order ?? 999;
+      const orderB = b.data.order ?? 999;
+      return orderA - orderB;
+    });
+  });
+
+  eleventyConfig.addCollection("universitySorted", function(collectionApi) {
+    return collectionApi.getFilteredByTag("university").sort((a, b) => {
+      const orderA = a.data.order ?? 999;
+      const orderB = b.data.order ?? 999;
+      return orderA - orderB;
+    });
+  });
+
+  eleventyConfig.addCollection("oddjobsSorted", function(collectionApi) {
+    return collectionApi.getFilteredByTag("oddjobs").sort((a, b) => {
+      const orderA = a.data.order ?? 999;
+      const orderB = b.data.order ?? 999;
+      return orderA - orderB;
+    });
+  });
+
   eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
     formats: ["avif", "webp", "jpeg"],
 
