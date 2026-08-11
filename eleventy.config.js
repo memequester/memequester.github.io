@@ -44,10 +44,16 @@ export default function(eleventyConfig) {
 	eleventyConfig.addExtension("scss", {
 		outputFileExtension: "css", 
 
-		compile: function (inputContent) {
+		compile: function (inputContent, inputPath) {
+      let parsed = path.parse(inputPath);
+
+      if (parsed.name.startsWith("_")) {
+        return;
+      }
+
       let result = sass.compileString(inputContent, {
         style: 'compressed',
-        loadPaths: [path.dirname(inputPath), "src"],
+        loadPaths: [parsed.dir || ".", "src"],
       });
 
 			return async (data) => {
